@@ -2,7 +2,8 @@
 
 > **Kannada Digital Innovation Hackathon 2026**  
 > **Problem Statement 6:** AI Travel Planner for Karnataka  
-> **Repository:** https://github.com/pgovila/KannadaYatra-AI---Intelligent-Travel-Companion-for-Karnataka
+> **🌐 Live Web Application:** [https://kannadayatra-ai---intelligent-travel-companion-for-karnataka-d.streamlit.app/](https://kannadayatra-ai---intelligent-travel-companion-for-karnataka-d.streamlit.app/)  
+> **💻 GitHub Repository:** [https://github.com/pgovila/KannadaYatra-AI---Intelligent-Travel-Companion-for-Karnataka](https://github.com/pgovila/KannadaYatra-AI---Intelligent-Travel-Companion-for-Karnataka)  
 
 ---
 
@@ -227,7 +228,7 @@ Total regional cuisines: 6
 | **Presentation (PPT)** | Problem, Existing System, Differentiation, Approach, Architecture, Conclusion | ✅ Completed (`KannadaYatra_AI_Presentation.pptx`) |
 | **Project Report** | Detailed project report explaining technical design, impact, and benchmarking | ✅ Completed (`KannadaYatra_AI_Project_Report.pdf`) |
 | **Video Script** | 3-5 minute voice-over walkthrough script matching guidelines | ✅ Completed (`Video_Script.md`) |
-| **Deployed Project** | Live, accessible URL | ✅ Ready for cloud deployment (Streamlit Cloud / HF Spaces) |
+| **Deployed Project** | Live, accessible URL | ✅ [Live Deployment App](https://kannadayatra-ai---intelligent-travel-companion-for-karnataka-d.streamlit.app/) |
 
 ---
 
