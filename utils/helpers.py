@@ -1120,9 +1120,15 @@ CUSTOM_CSS = """
     [data-testid="stMarkdownContainer"] .karnataka-hero-portal,
     [data-testid="stMarkdownContainer"] .karnataka-hero-portal *,
     .stApp [data-testid="stMarkdownContainer"] .karnataka-hero-portal *,
-    .stApp .karnataka-hero-portal * {
+    .stApp .karnataka-hero-portal *,
+    .stApp .karnataka-hero-portal p,
+    .stApp .karnataka-hero-portal span,
+    .stApp .karnataka-hero-portal div,
+    .stApp .karnataka-hero-portal b,
+    .stApp .karnataka-hero-portal strong {
         color: #FFFFFF !important;
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+        -webkit-text-fill-color: #FFFFFF !important;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95);
     }
     .hero-top-bar {
         display: flex;
@@ -1709,22 +1715,22 @@ def render_hero_banner() -> None:
     """Render the official Karnataka Tourism-styled dynamic cinematic hero banner."""
     html_content = """<div class="karnataka-hero-portal">
 <div class="hero-top-bar">
-    <div class="gov-badge-pill" style="color:#FEF3C7 !important;">
+    <div class="gov-badge-pill" style="color:#FEF3C7 !important; -webkit-text-fill-color:#FEF3C7 !important; background:rgba(15,23,42,0.9) !important; border:1.5px solid #FDE68A !important;">
         <span style="font-size:1.05rem;">🏛️</span>
-        <span style="color:#FEF3C7 !important; font-weight:800;">ಕರ್ನಾಟಕ ಸರ್ಕಾರ • KANNADA DIGITAL INNOVATION HACKATHON 2026</span>
+        <span style="color:#FEF3C7 !important; -webkit-text-fill-color:#FEF3C7 !important; font-weight:800;">ಕರ್ನಾಟಕ ಸರ್ಕಾರ • KANNADA DIGITAL INNOVATION HACKATHON 2026</span>
     </div>
-    <div class="gandaberunda-seal-pill" style="color:#FFFFFF !important;">
+    <div class="gandaberunda-seal-pill" style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important;">
         <span style="font-size:1.1rem;">👑</span>
-        <span style="color:#FFFFFF !important; font-weight:800;">Gandaberunda Royal Seal Verified</span>
+        <span style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important; font-weight:800;">Gandaberunda Royal Seal Verified</span>
     </div>
 </div>
 
-<div class="karnataka-kicker" style="color:#FBBF24 !important;">K A R N A T A K A</div>
-<div class="karnataka-hero-title" style="color:#FFFFFF !important;">One State, Many Worlds.</div>
-<div class="karnataka-hero-sub" style="color:#FEF3C7 !important;">KannadaYatra AI • ಕರ್ನಾಟಕ ಪ್ರವಾಸ ಸಹಾಯಕ</div>
+<div class="karnataka-kicker" style="color:#FBBF24 !important; -webkit-text-fill-color:#FBBF24 !important;">K A R N A T A K A</div>
+<div class="karnataka-hero-title" style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important;">One State, Many Worlds.</div>
+<div class="karnataka-hero-sub" style="color:#FEF3C7 !important; -webkit-text-fill-color:#FEF3C7 !important;">KannadaYatra AI • ಕರ್ನಾಟಕ ಪ್ರವಾಸ ಸಹಾಯಕ</div>
 
-<div class="karnataka-hero-desc-box">
-    <p class="karnataka-hero-desc" style="color:#FFFFFF !important;">
+<div class="karnataka-hero-desc-box" style="background:rgba(8,12,22,0.78) !important; border:1.5px solid rgba(255,255,255,0.3) !important;">
+    <p class="karnataka-hero-desc" style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important; font-size:1.1rem !important; line-height:1.7 !important; font-weight:600 !important; text-shadow:0 2px 8px rgba(0,0,0,0.95) !important;">
         Your intelligent, hyper-personalized AI travel companion for Karnataka. 
         Experience Karnataka like a local, not just a tourist, with living cultural deep-dives, 
         phonetically-taught 5-language survival phrases, real-world KSRTC transit feasibility, and secret culinary trails.
@@ -1732,34 +1738,34 @@ def render_hero_banner() -> None:
 </div>
 
 <div class="karnataka-cta-wrapper">
-    <div class="karnataka-cta-pill" style="color:#FFFFFF !important;">
-        <span style="color:#FFFFFF !important;">✨ Explore Itineraries Around You</span>
-        <span style="color:#FFFFFF !important; font-size:1.2rem;">➔</span>
+    <div class="karnataka-cta-pill" style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important;">
+        <span style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important;">✨ Explore Itineraries Around You</span>
+        <span style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important; font-size:1.2rem;">➔</span>
     </div>
 </div>
 
 <div class="karnataka-pills-row">
-    <span class="k-pill trending" style="color:#FFFFFF !important; background:linear-gradient(135deg, #D97706, #B45309) !important; border:1.5px solid #FDE68A !important;">
-        <span style="color:#FFFFFF !important;">🔥 What's trending?</span>
+    <span class="k-pill trending" style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important; background:linear-gradient(135deg, #D97706, #B45309) !important; border:1.5px solid #FDE68A !important; box-shadow:0 4px 12px rgba(0,0,0,0.5) !important;">
+        <span style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important; font-weight:800;">🔥 What's trending?</span>
     </span>
-    <span class="k-pill" style="color:#FFFFFF !important; background:rgba(15,23,42,0.85) !important; border:1.5px solid rgba(255,255,255,0.45) !important;">
-        <span style="color:#FFFFFF !important;">👑 Royal Wadiyar Heritage</span>
+    <span class="k-pill" style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important; background:rgba(15,23,42,0.9) !important; border:1.5px solid rgba(255,255,255,0.5) !important; box-shadow:0 4px 12px rgba(0,0,0,0.5) !important;">
+        <span style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important; font-weight:700;">👑 Royal Wadiyar Heritage</span>
     </span>
-    <span class="k-pill" style="color:#FFFFFF !important; background:rgba(15,23,42,0.85) !important; border:1.5px solid rgba(255,255,255,0.45) !important;">
-        <span style="color:#FFFFFF !important;">☕ Misty Ghats & Coffee</span>
+    <span class="k-pill" style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important; background:rgba(15,23,42,0.9) !important; border:1.5px solid rgba(255,255,255,0.5) !important; box-shadow:0 4px 12px rgba(0,0,0,0.5) !important;">
+        <span style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important; font-weight:700;">☕ Misty Ghats & Coffee</span>
     </span>
-    <span class="k-pill" style="color:#FFFFFF !important; background:rgba(15,23,42,0.85) !important; border:1.5px solid rgba(255,255,255,0.45) !important;">
-        <span style="color:#FFFFFF !important;">🌊 Karavali Coast & Sands</span>
+    <span class="k-pill" style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important; background:rgba(15,23,42,0.9) !important; border:1.5px solid rgba(255,255,255,0.5) !important; box-shadow:0 4px 12px rgba(0,0,0,0.5) !important;">
+        <span style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important; font-weight:700;">🌊 Karavali Coast & Sands</span>
     </span>
-    <span class="k-pill" style="color:#FFFFFF !important; background:rgba(15,23,42,0.85) !important; border:1.5px solid rgba(255,255,255,0.45) !important;">
-        <span style="color:#FFFFFF !important;">🏛️ UNESCO Stone Empires</span>
+    <span class="k-pill" style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important; background:rgba(15,23,42,0.9) !important; border:1.5px solid rgba(255,255,255,0.5) !important; box-shadow:0 4px 12px rgba(0,0,0,0.5) !important;">
+        <span style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important; font-weight:700;">🏛️ UNESCO Stone Empires</span>
     </span>
 </div>
 
-<div class="karnataka-hero-footer-bar" style="color:#FEF3C7 !important;">
-    <div style="color:#FEF3C7 !important;"><span style="color:#FEF3C7 !important;">🔈 <b style="color:#FFFFFF !important;">Audio Synthesizer:</b> Natural spoken Kannada voice active</span></div>
-    <div style="color:#FEF3C7 !important;"><span style="color:#FEF3C7 !important;">📍 <b style="color:#FFFFFF !important;">Zero Map Paywall:</b> Watermark-free OpenStreetMap</span></div>
-    <div style="color:#FEF3C7 !important;"><span style="color:#FEF3C7 !important;">⚡ <b style="color:#FFFFFF !important;">Dual-Engine AI:</b> Gemini 2.5 Flash + 6ms Offline Fallback</span></div>
+<div class="karnataka-hero-footer-bar" style="color:#FEF3C7 !important; -webkit-text-fill-color:#FEF3C7 !important;">
+    <div style="color:#FEF3C7 !important; -webkit-text-fill-color:#FEF3C7 !important;"><span style="color:#FEF3C7 !important; -webkit-text-fill-color:#FEF3C7 !important;">🔈 <b style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important;">Audio Synthesizer:</b> Natural spoken Kannada voice active</span></div>
+    <div style="color:#FEF3C7 !important; -webkit-text-fill-color:#FEF3C7 !important;"><span style="color:#FEF3C7 !important; -webkit-text-fill-color:#FEF3C7 !important;">📍 <b style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important;">Zero Map Paywall:</b> Watermark-free OpenStreetMap</span></div>
+    <div style="color:#FEF3C7 !important; -webkit-text-fill-color:#FEF3C7 !important;"><span style="color:#FEF3C7 !important; -webkit-text-fill-color:#FEF3C7 !important;">⚡ <b style="color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important;">Dual-Engine AI:</b> Gemini 2.5 Flash + 6ms Offline Fallback</span></div>
 </div>
 </div>"""
     st.markdown(html_content, unsafe_allow_html=True)

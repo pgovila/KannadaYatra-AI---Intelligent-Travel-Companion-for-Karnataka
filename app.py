@@ -1,11 +1,16 @@
 """
-app.py - KannadaYatra AI
+app.py - KannadaYatra AI (Release v2.2 - Pure White Hero Text & Officials Removed)
+
 Main Streamlit application with a website-style top navigation bar,
 light warm sandstone theme, 1-click curated circuits, audio phrase pronunciation,
 and an interactive user tutorial guide.
 """
 
 from __future__ import annotations
+
+import importlib
+import utils.helpers
+importlib.reload(utils.helpers)
 
 import streamlit as st
 import plotly.express as px
