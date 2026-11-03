@@ -1,0 +1,39 @@
+# Environment & secrets
+.env
+.env.local
+*.env
+
+# Submission Deliverables excluded from GitHub as per user instructions
+*.pdf
+*.pptx
+*.ppt
+Video_Script.md
+Presentation_PPT_Content.md
+Submission Guidelines.pdf
+Kannada Digital Innovation Hackathon.pdf
+Kannada Problem Statements.pdf
+
+# Python virtual environment & caches
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# Streamlit local state
+.streamlit/
+
+# Scratch & temporary testing files
+scratch/
+test_multilingual*.py
+test_pptx.py
+test_reportlab.py
+test_syn.py
+test_nav.py
+test_img.py
+test_svg.py
+test_phrase.py
+check_dashes.py
+replace_dashes.py
