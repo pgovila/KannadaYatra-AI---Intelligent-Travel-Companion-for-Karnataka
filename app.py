@@ -273,7 +273,7 @@ if not st.session_state.get("tutorial_completed", False):
 cur_app_lang = st.session_state.get("app_lang", "English")
 ui_str = UI_LOCALIZATION.get(cur_app_lang, UI_LOCALIZATION["English"])
 
-head_c1, head_c_sos, head_c_key, head_c2, head_c3 = st.columns([2.6, 0.7, 0.9, 1.2, 0.9])
+head_c1, head_c_sos, head_c2, head_c3 = st.columns([3.2, 0.8, 1.3, 1.1])
 with head_c1:
     st.markdown(
         f"""
@@ -348,37 +348,6 @@ with head_c_sos:
             """,
             unsafe_allow_html=True,
         )
-
-with head_c_key:
-    st.markdown("<div style='height: 2px;'></div>", unsafe_allow_html=True)
-    has_api_key = bool(get_gemini_api_key())
-    if has_api_key:
-        with st.popover("🟢 Gemini AI", help="Google Gemini 2.5 AI is connected and active"):
-            st.markdown("<div style='color:#166534; font-weight:800; font-size:0.95rem; margin-bottom:4px;'>🟢 Google Gemini AI Active</div>", unsafe_allow_html=True)
-            st.caption("Your Gemini API key is verified and powering real-time personalized synthesis.")
-            cur_k = get_gemini_api_key()
-            masked = cur_k[:4] + "..." + cur_k[-4:] if len(cur_k) > 8 else "***"
-            st.code(f"Key: {masked}", language="text")
-            new_k = st.text_input("Change Key:", type="password", key="update_key_input", placeholder="AIzaSy...")
-            if st.button("Update Key", key="save_updated_key_btn", use_container_width=True):
-                if new_k.strip():
-                    st.session_state["gemini_api_key"] = new_k.strip()
-                    os.environ["GEMINI_API_KEY"] = new_k.strip()
-                    st.toast("✅ Gemini API Key updated!", icon="🔑")
-                    st.rerun()
-    else:
-        with st.popover("🔑 Connect AI", help="Connect Google Gemini API Key for dynamic generative itineraries"):
-            st.markdown("<div style='color:#88131B; font-weight:800; font-size:0.95rem; margin-bottom:4px;'>🔑 Connect Gemini AI</div>", unsafe_allow_html=True)
-            st.caption("Paste your Gemini API key below to enable personalized AI synthesis right away.")
-            entered_k = st.text_input("Gemini API Key:", type="password", placeholder="AIzaSy...", key="direct_api_key_input")
-            if st.button("Activate AI", key="save_direct_key_btn", use_container_width=True):
-                if entered_k.strip():
-                    st.session_state["gemini_api_key"] = entered_k.strip()
-                    os.environ["GEMINI_API_KEY"] = entered_k.strip()
-                    st.toast("✅ Gemini API Key activated successfully!", icon="🎉")
-                    st.rerun()
-                else:
-                    st.warning("Please enter a valid key.")
 
 with head_c2:
     st.markdown("<div style='height: 2px;'></div>", unsafe_allow_html=True)
