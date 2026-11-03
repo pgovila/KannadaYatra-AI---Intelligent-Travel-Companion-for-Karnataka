@@ -7,6 +7,7 @@
 *.pdf
 *.pptx
 *.ppt
+presentation_assets/
 Video_Script.md
 Presentation_PPT_Content.md
 Submission Guidelines.pdf
@@ -37,3 +38,4 @@ test_svg.py
 test_phrase.py
 check_dashes.py
 replace_dashes.py
+
