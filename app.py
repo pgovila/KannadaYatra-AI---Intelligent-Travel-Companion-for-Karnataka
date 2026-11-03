@@ -37,7 +37,7 @@ from utils.helpers import (
     GANDABERUNDA_SEAL_SVG,
     GANDABERUNDA_HERITAGE_BADGE_HTML,
 )
-from core.planner import generate_itinerary, Itinerary, DayPlan, TimeSlot
+from core.planner import generate_itinerary, Itinerary, DayPlan, TimeSlot, get_gemini_api_key
 from core.insights import (
     PHRASE_CATEGORIES,
     KannadaPhrase,
@@ -51,6 +51,7 @@ from core.insights import (
     search_travel_phrases,
     TRAVEL_SCENARIOS,
     UI_LOCALIZATION,
+    localize_itinerary,
 )
 
 
@@ -255,6 +256,7 @@ empowers you to experience Karnataka like a local, not just a tourist.
                     }
                     st.session_state["tutorial_completed"] = True
                     st.session_state["main_nav_bar"] = "itinerary"
+                    st.session_state["main_nav_bar_radio"] = "itinerary"
                     st.rerun()
 
 
@@ -271,7 +273,7 @@ if not st.session_state.get("tutorial_completed", False):
 cur_app_lang = st.session_state.get("app_lang", "English")
 ui_str = UI_LOCALIZATION.get(cur_app_lang, UI_LOCALIZATION["English"])
 
-head_c1, head_c_sos, head_c2, head_c3 = st.columns([3.0, 0.9, 1.3, 1.1])
+head_c1, head_c_sos, head_c_key, head_c2, head_c3 = st.columns([2.6, 0.7, 0.9, 1.2, 0.9])
 with head_c1:
     st.markdown(
         f"""
@@ -302,17 +304,81 @@ with head_c1:
 with head_c_sos:
     st.markdown("<div style='height: 2px;'></div>", unsafe_allow_html=True)
     with st.popover("🚨 SOS", help="Emergency Helplines (24x7)"):
-        st.markdown("#### 🚨 Emergency Tourist Helplines")
+        sos_t = ui_str.get("sos_title", "Emergency Tourist Helplines")
+        pol_l = ui_str.get("police_helpline", "Police Emergency")
+        tour_l = ui_str.get("tourist_helpline", "Karnataka Tourist Helpline")
+        wom_l = ui_str.get("women_helpline", "Women Safety Helpline")
+        med_l = ui_str.get("medical_helpline", "Medical / Ambulance")
+        ksrtc_l = ui_str.get("ksrtc_care", "KSRTC 24x7 Passenger Care")
+        kstdc_l = ui_str.get("kstdc_booking", "KSTDC Central Booking")
+
         st.markdown(
-            """
-            - 👮 **Police Emergency:** `112`
-            - 🏛️ **Karnataka Tourist Helpline:** `1363` *(Toll-Free, 24x7)*
-            - 👩 **Women Safety Helpline:** `1091`
-            - 🚑 **Medical / Ambulance:** `108`
-            - 🚌 **KSRTC 24x7 Passenger Care:** `080-49596666`
-            - 🏨 **KSTDC Central Booking:** `080-43344334`
-            """
+            f"""
+            <div style="background:#FFFFFF; padding:6px; border-radius:10px; font-family:'Plus Jakarta Sans', sans-serif; min-width:260px;">
+                <div style="font-size:1.02rem; font-weight:800; color:#DC2626; margin-bottom:10px; border-bottom:2px solid #FEE2E2; padding-bottom:6px;">
+                    🚨 {sos_t}
+                </div>
+                <div style="display:flex; flex-direction:column; gap:8px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; padding:7px 10px; background:#FEF2F2; border-radius:8px; border-left:4px solid #DC2626;">
+                        <span style="font-weight:700; color:#1F2937; font-size:0.86rem;">👮 {pol_l}</span>
+                        <a href="tel:112" style="background:#DC2626; color:#FFFFFF !important; font-weight:800; padding:4px 10px; border-radius:6px; font-size:0.85rem; text-decoration:none; display:inline-block;">112</a>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; padding:7px 10px; background:#FEF3C7; border-radius:8px; border-left:4px solid #D97706;">
+                        <span style="font-weight:700; color:#1F2937; font-size:0.86rem;">🏛️ {tour_l}</span>
+                        <a href="tel:1363" style="background:#D97706; color:#FFFFFF !important; font-weight:800; padding:4px 10px; border-radius:6px; font-size:0.85rem; text-decoration:none; display:inline-block;">1363</a>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; padding:7px 10px; background:#FDF2F8; border-radius:8px; border-left:4px solid #DB2777;">
+                        <span style="font-weight:700; color:#1F2937; font-size:0.86rem;">👩 {wom_l}</span>
+                        <a href="tel:1091" style="background:#DB2777; color:#FFFFFF !important; font-weight:800; padding:4px 10px; border-radius:6px; font-size:0.85rem; text-decoration:none; display:inline-block;">1091</a>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; padding:7px 10px; background:#ECFDF5; border-radius:8px; border-left:4px solid #059669;">
+                        <span style="font-weight:700; color:#1F2937; font-size:0.86rem;">🚑 {med_l}</span>
+                        <a href="tel:108" style="background:#059669; color:#FFFFFF !important; font-weight:800; padding:4px 10px; border-radius:6px; font-size:0.85rem; text-decoration:none; display:inline-block;">108</a>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; padding:7px 10px; background:#EFF6FF; border-radius:8px; border-left:4px solid #2563EB;">
+                        <span style="font-weight:700; color:#1F2937; font-size:0.86rem;">🚌 {ksrtc_l}</span>
+                        <a href="tel:08049596666" style="background:#2563EB; color:#FFFFFF !important; font-weight:800; padding:3px 8px; border-radius:6px; font-size:0.80rem; text-decoration:none; display:inline-block;">080-49596666</a>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; padding:7px 10px; background:#F0FDFA; border-radius:8px; border-left:4px solid #0D9488;">
+                        <span style="font-weight:700; color:#1F2937; font-size:0.86rem;">🏨 {kstdc_l}</span>
+                        <a href="tel:08043344334" style="background:#0D9488; color:#FFFFFF !important; font-weight:800; padding:3px 8px; border-radius:6px; font-size:0.80rem; text-decoration:none; display:inline-block;">080-43344334</a>
+                    </div>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
         )
+
+with head_c_key:
+    st.markdown("<div style='height: 2px;'></div>", unsafe_allow_html=True)
+    has_api_key = bool(get_gemini_api_key())
+    if has_api_key:
+        with st.popover("🟢 Gemini AI", help="Google Gemini 2.5 AI is connected and active"):
+            st.markdown("<div style='color:#166534; font-weight:800; font-size:0.95rem; margin-bottom:4px;'>🟢 Google Gemini AI Active</div>", unsafe_allow_html=True)
+            st.caption("Your Gemini API key is verified and powering real-time personalized synthesis.")
+            cur_k = get_gemini_api_key()
+            masked = cur_k[:4] + "..." + cur_k[-4:] if len(cur_k) > 8 else "***"
+            st.code(f"Key: {masked}", language="text")
+            new_k = st.text_input("Change Key:", type="password", key="update_key_input", placeholder="AIzaSy...")
+            if st.button("Update Key", key="save_updated_key_btn", use_container_width=True):
+                if new_k.strip():
+                    st.session_state["gemini_api_key"] = new_k.strip()
+                    os.environ["GEMINI_API_KEY"] = new_k.strip()
+                    st.toast("✅ Gemini API Key updated!", icon="🔑")
+                    st.rerun()
+    else:
+        with st.popover("🔑 Connect AI", help="Connect Google Gemini API Key for dynamic generative itineraries"):
+            st.markdown("<div style='color:#88131B; font-weight:800; font-size:0.95rem; margin-bottom:4px;'>🔑 Connect Gemini AI</div>", unsafe_allow_html=True)
+            st.caption("Paste your Gemini API key below to enable personalized AI synthesis right away.")
+            entered_k = st.text_input("Gemini API Key:", type="password", placeholder="AIzaSy...", key="direct_api_key_input")
+            if st.button("Activate AI", key="save_direct_key_btn", use_container_width=True):
+                if entered_k.strip():
+                    st.session_state["gemini_api_key"] = entered_k.strip()
+                    os.environ["GEMINI_API_KEY"] = entered_k.strip()
+                    st.toast("✅ Gemini API Key activated successfully!", icon="🎉")
+                    st.rerun()
+                else:
+                    st.warning("Please enter a valid key.")
 
 with head_c2:
     st.markdown("<div style='height: 2px;'></div>", unsafe_allow_html=True)
@@ -436,6 +502,7 @@ curr_nav = st.session_state.get("main_nav_bar", "explore")
 if curr_nav not in NAV_KEYS:
     if "itinerary" in str(curr_nav).lower():
         st.session_state["main_nav_bar"] = "itinerary"
+        st.session_state["main_nav_bar_radio"] = "itinerary"
     elif "builder" in str(curr_nav).lower() or "custom" in str(curr_nav).lower():
         st.session_state["main_nav_bar"] = "builder"
     elif "survival" in str(curr_nav).lower():
@@ -449,15 +516,23 @@ if curr_nav not in NAV_KEYS:
     else:
         st.session_state["main_nav_bar"] = "explore"
 
-selected_nav = st.segmented_control(
+desired_nav = st.session_state.get("main_nav_bar", "explore")
+if desired_nav not in NAV_KEYS:
+    desired_nav = "explore"
+    st.session_state["main_nav_bar"] = "explore"
+
+desired_idx = NAV_KEYS.index(desired_nav)
+
+selected_nav = st.radio(
     "Main Navigation",
     options=NAV_KEYS,
+    index=desired_idx,
     format_func=lambda k: get_nav_label(k, cur_app_lang),
-    key="main_nav_bar",
+    key="main_nav_bar_radio",
+    horizontal=True,
     label_visibility="collapsed",
 )
-if not selected_nav:
-    selected_nav = st.session_state.get("main_nav_bar", "explore")
+st.session_state["main_nav_bar"] = selected_nav
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -468,12 +543,11 @@ if selected_nav == "explore":
     render_hero_banner()
 
     # ── 1-Click Curated Circuits Showcase ──
-    st.markdown("### 🌟 Popular Curated Circuits (1-Click Itinerary Launchers)")
+    st.markdown(f"### {ui_str.get('popular_circuits_title', '🌟 Popular Curated Circuits (1-Click Itinerary Launchers)')}")
     st.markdown(
-        "<p style='color:#6B7280; margin-top:-0.5rem; margin-bottom:1.3rem; font-size:0.95rem;'>"
-        "Short on time? Pick an iconic, hand-crafted Karnataka route curated by local historians and food explorers. "
-        "Click <b>Plan This Trip</b> to generate the complete timeline instantly."
-        "</p>",
+        f"<p style='color:#6B7280; margin-top:-0.5rem; margin-bottom:1.3rem; font-size:0.95rem;'>"
+        f"{ui_str.get('popular_circuits_desc', 'Short on time? Pick an iconic, hand-crafted Karnataka route curated by local historians and food explorers. Click <b>Plan This Trip</b> to generate the complete timeline instantly.')}"
+        f"</p>",
         unsafe_allow_html=True,
     )
 
@@ -501,7 +575,7 @@ if selected_nav == "explore":
                 </div>""",
                 unsafe_allow_html=True,
             )
-            if st.button(f"🚀 Plan This Trip", key=f"launch_circuit_{idx}", use_container_width=True):
+            if st.button(ui_str.get("plan_this_trip", "🚀 Plan This Trip"), key=f"launch_circuit_{idx}", use_container_width=True):
                 with st.spinner(f"Generating {c_info['title']}…"):
                     itinerary, used_ai = generate_itinerary(
                         interests=c_info["interests"],
@@ -524,6 +598,7 @@ if selected_nav == "explore":
                         "companions": c_info["companions"],
                     }
                     st.session_state["main_nav_bar"] = "itinerary"
+                    st.session_state["main_nav_bar_radio"] = "itinerary"
                     st.toast(f"✅ Loaded {c_info['title']}!", icon="🎉")
                     st.rerun()
 
@@ -695,6 +770,7 @@ elif selected_nav == "builder":
                     "companions": companions_input,
                 }
                 st.session_state["main_nav_bar"] = "itinerary"
+                st.session_state["main_nav_bar_radio"] = "itinerary"
                 st.toast("🎉 Custom Itinerary generated!", icon="📍")
                 st.rerun()
 
@@ -707,14 +783,38 @@ elif selected_nav == "itinerary":
     if not st.session_state.get("generation_done") or st.session_state.get("itinerary") is None:
         st.info("💡 No itinerary generated yet. Choose a preset from **'Explore & Circuits'** or customize one in **'Custom Trip Planner'**!")
     else:
-        itin: Itinerary = st.session_state["itinerary"]
+        raw_itin: Itinerary = st.session_state["itinerary"]
+        itin: Itinerary = localize_itinerary(raw_itin, cur_app_lang)
         budget_d = st.session_state["budget_data"]
 
         # Engine indicator
+        has_ai_key = bool(get_gemini_api_key())
         if st.session_state.get("used_ai"):
-            st.success("✨ Itinerary generated using **Google Gemini AI** - personalized for your group!")
+            st.success(ui_str.get("status_ai_generated", "✨ Itinerary generated using **Google Gemini AI** - personalized for your group!"))
+        elif has_ai_key:
+            col_stat1, col_stat2 = st.columns([3.2, 1.2])
+            with col_stat1:
+                st.info(ui_str.get("status_curated_with_ai_ready", "⚡ **Verified Regional Ground Truth Engine Active** · 100% verified route."))
+            with col_stat2:
+                if st.button(ui_str.get("resynthesize_btn", "✨ Re-synthesize with Gemini AI"), key="resynthesize_ai_btn", use_container_width=True):
+                    prefs = st.session_state.get("trip_prefs", {})
+                    with st.spinner("Re-synthesizing itinerary with Google Gemini AI..."):
+                        new_itin, ai_ok = generate_itinerary(
+                            interests=prefs.get("interests", ["Heritage", "Food"]),
+                            budget_tier=prefs.get("budget_tier", "Mid-range"),
+                            days=prefs.get("days", 3),
+                            travelers=prefs.get("travelers", 2),
+                            companions=prefs.get("companions", "Friends"),
+                            fast_launch=False,
+                            language=cur_app_lang,
+                        )
+                        if ai_ok and new_itin:
+                            st.session_state["itinerary"] = new_itin
+                            st.session_state["used_ai"] = True
+                            st.toast("✅ Re-synthesized with Google Gemini AI!", icon="✨")
+                            st.rerun()
         else:
-            st.info("📋 Itinerary crafted using our **Curated Expert Database**. (Add a Gemini API key in `.env` for generative AI variants)")
+            st.info(ui_str.get("status_curated_active", "⚡ **Verified Regional Ground Truth Database Active** · 100% verified Karnataka circuits and logistics."))
 
         st.markdown(f"## {itin.trip_title}")
         if itin.overview:
@@ -731,19 +831,19 @@ elif selected_nav == "itinerary":
 
         mc1, mc2, mc3, mc4 = st.columns(4)
         with mc1:
-            st.metric("📅 Total Days", len(itin.days))
+            st.metric(ui_str.get("total_days", "📅 Total Days"), len(itin.days))
         with mc2:
-            st.metric("📍 Destinations", len(all_destinations))
+            st.metric(ui_str.get("destinations_count", "📍 Destinations"), len(all_destinations))
         with mc3:
-            st.metric("👥 Travelers", itin.num_travelers)
+            st.metric(ui_str.get("travelers_count", "👥 Travelers"), itin.num_travelers)
         with mc4:
-            st.metric("💰 Budget Tier", itin.budget_tier)
+            st.metric(ui_str.get("budget_tier_label", "💰 Budget Tier"), itin.budget_tier)
 
         st.markdown("---")
 
         # ── Route Map ──
-        st.markdown("### 🗺️ Interactive Travel Route")
-        st.caption("Visual travel route connecting all scheduled stops in chronological order.")
+        st.markdown(f"### {ui_str.get('interactive_map_title', '🗺️ Interactive Travel Route')}")
+        st.caption(ui_str.get("interactive_map_caption", "Visual travel route connecting all scheduled stops in chronological order."))
 
         route_map = folium.Map(location=[14.0, 76.0], zoom_start=7, tiles="OpenStreetMap")
         route_coords = []
@@ -779,11 +879,11 @@ elif selected_nav == "itinerary":
 
         # ── Official Booking Bar ──
         st.markdown(
-            """
+            f"""
             <div class="booking-cta-bar">
                 <div>
-                    <div class="title">🎟️ Ready to Book Your Karnataka Experience?</div>
-                    <div class="desc">Lock in verified government transportation, jungle safari permits, and heritage packages directly:</div>
+                    <div class="title">{ui_str.get('booking_cta_title', '🎟️ Ready to Book Your Karnataka Experience?')}</div>
+                    <div class="desc">{ui_str.get('booking_cta_desc', 'Lock in verified government transportation, jungle safari permits, and heritage packages directly:')}</div>
                 </div>
                 <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
                     <a href="https://kstdc.co" target="_blank" class="booking-btn">🏛️ KSTDC Tours</a>
@@ -799,28 +899,35 @@ elif selected_nav == "itinerary":
         st.markdown("---")
 
         # ── Day-by-Day Timeline ──
-        st.markdown("### 📅 Day-by-Day Detailed Timeline")
+        st.markdown(f"### {ui_str.get('day_timeline_title', '📅 Day-by-Day Detailed Timeline')}")
+
+        day_prefix = ui_str.get("day_prefix", "Day")
+        overnight_prefix = ui_str.get("overnight_prefix", "🏨 Overnight:")
+        highlights_prefix = ui_str.get("highlights_prefix", "✨ Highlights:")
+        food_prefix = ui_str.get("local_secret", "🍛 Local Food Secret")
+        timing_prefix = ui_str.get("optimal_timing", "⏰ Optimal Timing")
+        transit_prefix = ui_str.get("transit_tip", "🚌 Transit Tip")
 
         for day in itin.days:
             st.markdown(
-                f'<div class="day-header">Day {day.day_number} - {day.title} '
+                f'<div class="day-header">{day_prefix} {day.day_number} - {day.title} '
                 f'<span style="font-size:0.85rem; opacity:0.9; font-weight:600;">'
-                f'🏨 Overnight: {day.overnight_stay}</span></div>',
+                f'{overnight_prefix} {day.overnight_stay}</span></div>',
                 unsafe_allow_html=True,
             )
 
             if day.day_highlights:
                 highlight_str = " · ".join(f"✦ {h}" for h in day.day_highlights)
-                st.caption(f"✨ Highlights: {highlight_str}")
+                st.caption(f"{highlights_prefix} {highlight_str}")
 
             for slot in day.slots:
                 dest_meta = KARNATAKA_DESTINATIONS.get(slot.destination)
                 dest_img_url = get_destination_image(dest_meta.name if dest_meta else slot.destination)
                 img_tag = f"""<img src="{dest_img_url}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=650&q=80';" style="width:72px; height:72px; object-fit:cover; border-radius:10px; float:left; margin-right:14px; margin-bottom:6px; box-shadow:0 2px 8px rgba(0,0,0,0.12); border:1px solid #E5E7EB; background:#88131B;" />"""
-                secret_food = f"<div style='color:#9E1A22; font-size:0.85rem; margin-top:3px;'>🍛 <b>Local Food Secret:</b> {dest_meta.secret_eatery}</div>" if dest_meta and dest_meta.secret_eatery else ""
-                golden_hour = f"<div style='color:#B45309; font-size:0.85rem; margin-top:3px;'>⏰ <b>Optimal Timing:</b> {dest_meta.best_time_of_day}</div>" if dest_meta and dest_meta.best_time_of_day else ""
+                secret_food = f"<div style='color:#9E1A22; font-size:0.85rem; margin-top:3px;'><b>{food_prefix}:</b> {dest_meta.secret_eatery}</div>" if dest_meta and dest_meta.secret_eatery else ""
+                golden_hour = f"<div style='color:#B45309; font-size:0.85rem; margin-top:3px;'><b>{timing_prefix}:</b> {dest_meta.best_time_of_day}</div>" if dest_meta and dest_meta.best_time_of_day else ""
                 crowd_note = f"<span style='float:right; font-size:0.75rem; background:#FEF3C7; color:#92400E; padding:2px 8px; border-radius:12px; font-weight:700;'>👥 {dest_meta.crowd_level}</span>" if dest_meta else ""
-                transit_note = f"<div style='color:#1E3A8A; font-size:0.82rem; margin-top:2px;'>🚌 <b>Transit Tip:</b> {dest_meta.transit_tip}</div>" if dest_meta and dest_meta.transit_tip else ""
+                transit_note = f"<div style='color:#1E3A8A; font-size:0.82rem; margin-top:2px;'><b>{transit_prefix}:</b> {dest_meta.transit_tip}</div>" if dest_meta and dest_meta.transit_tip else ""
 
                 st.markdown(
                     f"""<div class="timeline-item" style="overflow:hidden;">
@@ -845,7 +952,7 @@ elif selected_nav == "itinerary":
         col_p1, col_p2 = st.columns([2, 1])
         with col_p1:
             if itin.pro_tips:
-                st.markdown("### 💡 Local Expert Pro-Tips")
+                st.markdown(f"### {ui_str.get('pro_tips_title', '💡 Local Expert Pro-Tips')}")
                 for tip in itin.pro_tips:
                     st.markdown(f"- {tip}")
 

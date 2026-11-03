@@ -935,6 +935,85 @@ CUSTOM_CSS = """
         font-weight: 800 !important;
     }
 
+    /* Modern Website Horizontal Radio Navigation Bar */
+    div[data-testid="stRadio"]:has(div[role="radiogroup"]) {
+        margin-bottom: 1.4rem !important;
+    }
+    div[data-testid="stRadio"] div[role="radiogroup"] {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        background: #FFFFFF !important;
+        padding: 6px 10px !important;
+        border-radius: 16px !important;
+        border: 1.5px solid #F3F4F6 !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+        gap: 8px !important;
+    }
+    div[data-testid="stRadio"] div[role="radiogroup"] > label {
+        display: inline-flex !important;
+        align-items: center !important;
+        border-radius: 12px !important;
+        border: 1px solid #E5E7EB !important;
+        padding: 0.55rem 1.15rem !important;
+        background: #F9FAFB !important;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        cursor: pointer !important;
+        margin: 0 !important;
+    }
+    div[data-testid="stRadio"] div[role="radiogroup"] > label:hover {
+        background: #FEF3C7 !important;
+        border-color: #FDE68A !important;
+        transform: translateY(-1px) !important;
+    }
+    div[data-testid="stRadio"] div[role="radiogroup"] > label p,
+    div[data-testid="stRadio"] div[role="radiogroup"] > label span,
+    div[data-testid="stRadio"] div[role="radiogroup"] > label div {
+        color: #374151 !important;
+        font-weight: 700 !important;
+        font-size: 0.92rem !important;
+    }
+    /* Hide the radio circle input completely */
+    div[data-testid="stRadio"] div[role="radiogroup"] input[type="radio"],
+    div[data-testid="stRadio"] div[role="radiogroup"] [data-testid="stRadioButtonCustom"] {
+        display: none !important;
+    }
+    /* Active Radio Pill */
+    div[data-testid="stRadio"] div[role="radiogroup"] > label:has(input:checked),
+    div[data-testid="stRadio"] div[role="radiogroup"] > label[data-checked="true"] {
+        background: linear-gradient(135deg, #88131B 0%, #B91C1C 100%) !important;
+        border: 1px solid #7F1D1D !important;
+        box-shadow: 0 4px 14px rgba(136, 19, 27, 0.3) !important;
+    }
+    div[data-testid="stRadio"] div[role="radiogroup"] > label:has(input:checked) p,
+    div[data-testid="stRadio"] div[role="radiogroup"] > label:has(input:checked) span,
+    div[data-testid="stRadio"] div[role="radiogroup"] > label:has(input:checked) div,
+    div[data-testid="stRadio"] div[role="radiogroup"] > label[data-checked="true"] p,
+    div[data-testid="stRadio"] div[role="radiogroup"] > label[data-checked="true"] span,
+    div[data-testid="stRadio"] div[role="radiogroup"] > label[data-checked="true"] div {
+        color: #FFFFFF !important;
+        font-weight: 800 !important;
+    }
+
+    /* Streamlit Popover Dropdowns (SOS & Info Popovers) - High Contrast Pure White */
+    [data-testid="stPopoverBody"] {
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        color: #111827 !important;
+        border-radius: 14px !important;
+        border: 2px solid #DC2626 !important;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25) !important;
+        padding: 12px !important;
+    }
+    [data-testid="stPopoverBody"] * {
+        color: #111827 !important;
+    }
+    [data-testid="stPopoverBody"] a {
+        text-decoration: none !important;
+    }
+
     /* Modern Website Segmented Control Top Navbar */
     [data-testid="stSegmentedControl"] {
         display: flex !important;

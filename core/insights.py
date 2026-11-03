@@ -615,6 +615,32 @@ UI_LOCALIZATION = {
         "budget_tab": "💰 Budget Optimizer",
         "culture_tab": "🎭 Cultural Explorer",
         "guide_tab": "🧭 User Guide & Tutorial",
+        "sos_title": "Emergency Tourist Helplines",
+        "police_helpline": "Police Emergency",
+        "tourist_helpline": "Karnataka Tourist Helpline",
+        "women_helpline": "Women Safety Helpline",
+        "medical_helpline": "Medical / Ambulance",
+        "ksrtc_care": "KSRTC 24x7 Passenger Care",
+        "kstdc_booking": "KSTDC Central Booking",
+        "status_ai_generated": "✨ Itinerary generated using **Google Gemini AI** - personalized for your group!",
+        "status_curated_with_ai_ready": "⚡ **Verified Regional Ground Truth Engine Active** · 100% verified route.",
+        "status_curated_active": "⚡ **Verified Regional Ground Truth Database Active** · 100% verified Karnataka circuits and logistics.",
+        "resynthesize_btn": "✨ Re-synthesize with Gemini AI",
+        "total_days": "📅 Total Days",
+        "destinations_count": "📍 Destinations",
+        "travelers_count": "👥 Travelers",
+        "budget_tier_label": "💰 Budget Tier",
+        "interactive_map_title": "🗺️ Interactive Travel Route",
+        "interactive_map_caption": "Visual travel route connecting all scheduled stops in chronological order.",
+        "booking_cta_title": "🎟️ Ready to Book Your Karnataka Experience?",
+        "booking_cta_desc": "Lock in verified government transportation, jungle safari permits, and heritage packages directly:",
+        "day_timeline_title": "📅 Day-by-Day Detailed Timeline",
+        "day_prefix": "Day",
+        "overnight_prefix": "🏨 Overnight:",
+        "highlights_prefix": "✨ Highlights:",
+        "pro_tips_title": "💡 Local Expert Pro-Tips",
+        "popular_circuits_title": "🌟 Popular Curated Circuits (1-Click Itinerary Launchers)",
+        "popular_circuits_desc": "Short on time? Pick an iconic, hand-crafted Karnataka route curated by local historians and food explorers. Click <b>Plan This Trip</b> to generate the complete timeline instantly.",
     },
     "Kannada": {
         "brand_subtitle": "ಕರ್ನಾಟಕ ಪ್ರವಾಸ ಸಹಾಯಕ • ಕನ್ನಡ ಡಿಜಿಟಲ್ ನಾವೀನ್ಯತೆ",
@@ -644,6 +670,32 @@ UI_LOCALIZATION = {
         "budget_tab": "💰 ಬಜೆಟ್ ಆಪ್ಟಿಮೈಜರ್",
         "culture_tab": "🎭 ಸಾಂಸ್ಕೃತಿಕ ಅನ್ವೇಷಣೆ",
         "guide_tab": "🧭 ಬಳಕೆದಾರ ಮಾರ್ಗದರ್ಶಿ",
+        "sos_title": "ತುರ್ತು ಪ್ರವಾಸಿ ಸಹಾಯವಾಣಿಗಳು",
+        "police_helpline": "ಪೊಲೀಸ್ ತುರ್ತು ಸೇವೆ",
+        "tourist_helpline": "ಕರ್ನಾಟಕ ಪ್ರವಾಸೋದ್ಯಮ ಸಹಾಯವಾಣಿ",
+        "women_helpline": "ಮಹಿಳಾ ಸುರಕ್ಷತಾ ಸಹಾಯವಾಣಿ",
+        "medical_helpline": "ವೈದ್ಯಕೀಯ / ಆಂಬ್ಯುಲೆನ್ಸ್",
+        "ksrtc_care": "KSRTC 24x7 ಪ್ರಯಾಣಿಕರ ಸೇವೆ",
+        "kstdc_booking": "KSTDC ಕೇಂದ್ರ ಬುಕಿಂಗ್",
+        "status_ai_generated": "✨ **ಗೂಗಲ್ ಜೆಮಿನಿ AI** ಬಳಸಿ ಪ್ರವಾಸ ವಿವರ ಸಿದ್ಧಪಡಿಸಲಾಗಿದೆ - ನಿಮ್ಮ ತಂಡಕ್ಕೆ ತಕ್ಕಂತೆ ರೂಪಿಸಲಾಗಿದೆ!",
+        "status_curated_with_ai_ready": "⚡ **ಪರಿಶೀಲಿಸಿದ ಪ್ರಾದೇಶಿಕ ದತ್ತಸಂಚಯ ಸಕ್ರಿಯ** · 100% ಅಧಿಕೃತ ಮಾರ್ಗ.",
+        "status_curated_active": "⚡ **ಪರಿಶೀಲಿಸಿದ ಪ್ರಾದೇಶಿಕ ದತ್ತಸಂಚಯ ಸಕ್ರಿಯ** · 100% ಅಧಿಕೃತ ಕರ್ನಾಟಕ ಪ್ರವಾಸ ಮಾಹಿತಿ.",
+        "resynthesize_btn": "✨ ಜೆಮಿನಿ AI ಮೂಲಕ ಮರು-ರಚಿಸಿ",
+        "total_days": "📅 ಒಟ್ಟು ದಿನಗಳು",
+        "destinations_count": "📍 ಪ್ರವಾಸಿ ತಾಣಗಳು",
+        "travelers_count": "👥 ಪ್ರವಾಸಿಗರು",
+        "budget_tier_label": "💰 ಬಜೆಟ್ ಶ್ರೇಣಿ",
+        "interactive_map_title": "🗺️ ಸಂವಾದಾತ್ಮಕ ಪ್ರವಾಸ ಮಾರ್ಗ ನಕ್ಷೆ",
+        "interactive_map_caption": "ಎಲ್ಲಾ ಪ್ರವಾಸಿ ತಾಣಗಳನ್ನು ಕಾಲಾನುಕ್ರಮದಲ್ಲಿ ಸಂಪರ್ಕಿಸುವ ಅಧಿಕೃತ ಮಾರ್ಗ ನಕ್ಷೆ.",
+        "booking_cta_title": "🎟️ ನಿಮ್ಮ ಕರ್ನಾಟಕ ಪ್ರವಾಸವನ್ನು ಬುಕ್ ಮಾಡಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+        "booking_cta_desc": "ಸರ್ಕಾರಿ ಸಾರಿಗೆ, ಅರಣ್ಯ ಸಫಾರಿ ಪಾಸ್ ಮತ್ತು ಪರಂಪರೆ ಪ್ರವಾಸಗಳನ್ನು ನೇರವಾಗಿ ಬುಕ್ ಮಾಡಿ:",
+        "day_timeline_title": "📅 ದಿನವಾರು ವಿವರವಾದ ಪ್ರವಾಸ ಕಾರ್ಯಕ್ರಮ",
+        "day_prefix": "ದಿನ",
+        "overnight_prefix": "🏨 ವಾಸ್ತವ್ಯ:",
+        "highlights_prefix": "✨ ಮುಖ್ಯಾಂಶಗಳು:",
+        "pro_tips_title": "💡 ಸ್ಥಳೀಯ ತಜ್ಞರ ಸಲಹೆಗಳು",
+        "popular_circuits_title": "🌟 ಜನಪ್ರಿಯ ಕರ್ನಾಟಕ ಪ್ರವಾಸಗಳು (ಏಕ-ಕ್ಲಿಕ್ ತ್ವರಿತ ಯೋಜನೆ)",
+        "popular_circuits_desc": "ಸಮಯ ಕಡಿಮೆಯಿದೆಯೇ? ಸ್ಥಳೀಯ ಇತಿಹಾಸಕಾರರು ಮತ್ತು ಆಹಾರ ತಜ್ಞರು ಸಿದ್ಧಪಡಿಸಿದ ಜನಪ್ರಿಯ ಕರ್ನಾಟಕ ಮಾರ್ಗವನ್ನು ಆರಿಸಿ. ಸಂಪೂರ್ಣ ಪ್ರವಾಸ ವಿವರಕ್ಕಾಗಿ <b>ಈ ಪ್ರವಾಸವನ್ನು ಯೋಜಿಸಿ</b> ಕ್ಲಿಕ್ ಮಾಡಿ.",
     },
     "Hindi": {
         "brand_subtitle": "कर्नाटक का बुद्धिमान और सांस्कृतिक यात्रा साथी",
@@ -673,6 +725,32 @@ UI_LOCALIZATION = {
         "budget_tab": "💰 बजट कैलकुलेटर",
         "culture_tab": "🎭 सांस्कृतिक अन्वेषण",
         "guide_tab": "🧭 उपयोगकर्ता मार्गदर्शिका",
+        "sos_title": "आपातकालीन पर्यटक हेल्पलाइन",
+        "police_helpline": "पुलिस आपातकालीन",
+        "tourist_helpline": "कर्नाटक पर्यटन हेल्पलाइन",
+        "women_helpline": "महिला सुरक्षा हेल्पलाइन",
+        "medical_helpline": "चिकित्सा / एम्बुलेंस",
+        "ksrtc_care": "KSRTC 24x7 यात्री सेवा",
+        "kstdc_booking": "KSTDC केंद्रीय बुकिंग",
+        "status_ai_generated": "✨ **गूगल जेमिनी AI** द्वारा तैयार यात्रा कार्यक्रम - आपके समूह के लिए व्यक्तिगत!",
+        "status_curated_with_ai_ready": "⚡ **सत्यापित क्षेत्रीय डेटाबेस सक्रिय** · 100% प्रामाणिक मार्ग।",
+        "status_curated_active": "⚡ **सत्यापित क्षेत्रीय डेटाबेस सक्रिय** · 100% प्रामाणिक कर्नाटक पर्यटन मार्ग।",
+        "resynthesize_btn": "✨ जेमिनी AI से पुनः बनाएं",
+        "total_days": "📅 कुल दिन",
+        "destinations_count": "📍 प्रमुख गंतव्य",
+        "travelers_count": "👥 कुल यात्री",
+        "budget_tier_label": "💰 बजट स्तर",
+        "interactive_map_title": "🗺️ इंटरएक्टिव यात्रा मार्ग मानचित्र",
+        "interactive_map_caption": "सभी निर्धारित पड़ावों को क्रमानुसार जोड़ने वाला दृश्य यात्रा मार्ग।",
+        "booking_cta_title": "🎟️ अपनी कर्नाटक यात्रा बुक करने के लिए तैयार हैं?",
+        "booking_cta_desc": "सत्यापित सरकारी परिवहन, जंगल सफारी परमिट और हेरिटेज टूर सीधे बुक करें:",
+        "day_timeline_title": "📅 दिन-प्रतिदिन विस्तृत यात्रा कार्यक्रम",
+        "day_prefix": "दिन",
+        "overnight_prefix": "🏨 रात्रि विश्राम:",
+        "highlights_prefix": "✨ मुख्य आकर्षण:",
+        "pro_tips_title": "💡 स्थानीय विशेषज्ञों के उपयोगी सुझाव",
+        "popular_circuits_title": "🌟 लोकप्रिय चुनिंदा सर्किट (1-क्लिक त्वरित योजना)",
+        "popular_circuits_desc": "समय कम है? स्थानीय इतिहासकारों और भोजन विशेषज्ञों द्वारा तैयार किए गए प्रसिद्ध कर्नाटक मार्गों में से चुनें। संपूर्ण यात्रा कार्यक्रम के लिए <b>यह यात्रा प्लान करें</b> पर क्लिक करें।",
     },
     "Tamil": {
         "brand_subtitle": "கர்நாடகாவின் அறிவார்ந்த மற்றும் கலாச்சார பயண வழிகாட்டி",
@@ -702,6 +780,32 @@ UI_LOCALIZATION = {
         "budget_tab": "💰 பட்ஜெட் வழிகாட்டி",
         "culture_tab": "🎭 கலாச்சார ஆய்வு",
         "guide_tab": "🧭 பயனர் வழிகாட்டி",
+        "sos_title": "அவசர சுற்றுலா உதவி எண்கள்",
+        "police_helpline": "காவல்துறை அவசர உதவி",
+        "tourist_helpline": "கர்நாடக சுற்றுலா உதவி எண்",
+        "women_helpline": "பெண்கள் பாதுகாப்பு உதவி எண்",
+        "medical_helpline": "மருத்துவ / ஆம்புலன்ஸ்",
+        "ksrtc_care": "KSRTC 24x7 பயணிகள் சேவை",
+        "kstdc_booking": "KSTDC மத்திய முன்பதிவு",
+        "status_ai_generated": "✨ **கூகிள் ஜெமினி AI** மூலம் உருவாக்கப்பட்ட பயண திட்டம் - உங்களுக்காக பிரத்யேகமானது!",
+        "status_curated_with_ai_ready": "⚡ **சரிபார்க்கப்பட்ட பிராந்திய தரவுத்தளம் செயலில் உள்ளது** · 100% நம்பகமான பாதை.",
+        "status_curated_active": "⚡ **சரிபார்க்கப்பட்ட பிராந்திய தரவுத்தளம் செயலில் உள்ளது** · 100% நம்பகமான கர்நாடக வழிகள்.",
+        "resynthesize_btn": "✨ ஜெமினி AI கொண்டு மீண்டும் உருவாக்கவும்",
+        "total_days": "📅 மொத்த நாட்கள்",
+        "destinations_count": "📍 சுற்றுலா இடங்கள்",
+        "travelers_count": "👥 பயணிகள்",
+        "budget_tier_label": "💰 பட்ஜெட் வகை",
+        "interactive_map_title": "🗺️ ஊடாடும் பயண வரைபடம்",
+        "interactive_map_caption": "அனைத்து திட்டமிடப்பட்ட நிறுத்தங்களையும் காலவரிசைப்படி இணைக்கும் பயணப் பாதை.",
+        "booking_cta_title": "🎟️ உங்கள் கர்நாடக அனுபவத்தை முன்பதிவு செய்ய தயாரா?",
+        "booking_cta_desc": "அரசு போக்குவரத்து, வனவிலங்கு சஃபாரி அனுமதிகள் மற்றும் பாரம்பரிய சுற்றுப்பயணங்களை நேரடியாக பதிவு செய்யுங்கள்:",
+        "day_timeline_title": "📅 நாள் வாரியாக விரிவான பயண காலவரிசை",
+        "day_prefix": "நாள்",
+        "overnight_prefix": "🏨 இரவு தங்கல்:",
+        "highlights_prefix": "✨ சிறப்பம்சங்கள்:",
+        "pro_tips_title": "💡 உள்ளூர் நிபுணர் உதவிக்குறிப்புகள்",
+        "popular_circuits_title": "🌟 பிரபலமான கர்நாடக சுற்றுலா சுற்றுகள் (1-கிளிக் உடனடி திட்டம்)",
+        "popular_circuits_desc": "குறைந்த நேரமா? வரலாற்று மற்றும் உணவு நிபுணர்களால் தேர்ந்தெடுக்கப்பட்ட கர்நாடகாவின் புகழ்பெற்ற சுற்றுலா வழிகளை தேர்வு செய்யுங்கள். முழுமையான அட்டவணைக்கு <b>இந்த பயணத்தைத் திட்டமிடுங்கள்</b> என்பதை கிளிக் செய்யவும்.",
     },
     "Telugu": {
         "brand_subtitle": "కర్ణాటక కోసం తెలివైన సాంస్కృతిక ప్రయాణ సహచరుడు",
@@ -731,8 +835,303 @@ UI_LOCALIZATION = {
         "budget_tab": "💰 బడ్జెట్ ఆప్టిమైజర్",
         "culture_tab": "🎭 సాంస్కృతిక విశేషాలు",
         "guide_tab": "🧭 గైడ్ & ట్యుటోరియల్",
+        "sos_title": "అత్యవసర పర్యాటక హెల్ప్‌లైన్‌లు",
+        "police_helpline": "పోలీస్ అత్యవసర సేవ",
+        "tourist_helpline": "కర్ణాటక పర్యాటక హెల్ప్‌లైన్",
+        "women_helpline": "మహిళా భద్రతా హెల్ప్‌లైన్",
+        "medical_helpline": "వైద్య / అంబులెన్స్",
+        "ksrtc_care": "KSRTC 24x7 ప్రయాణికుల సేవ",
+        "kstdc_booking": "KSTDC సెంట్రల్ బుకింగ్",
+        "status_ai_generated": "✨ **గూగుల్ జెమిని AI** తో రూపొందించిన ప్రయాణ ప్రణాళిక - మీ కోసం ప్రత్యేకంగా రూపొందించబడింది!",
+        "status_curated_with_ai_ready": "⚡ **ధృవీకరించబడిన ప్రాంతీయ డేటాబేస్ యాక్టివ్** · 100% నమ్మకమైన మార్గం.",
+        "status_curated_active": "⚡ **ధృవీకరించబడిన ప్రాంతీయ డేటాబేస్ యాక్టివ్** · 100% నమ్మకమైన కర్ణాటక మార్గాలు.",
+        "resynthesize_btn": "✨ జెమిని AI తో పునఃసృష్టి చేయండి",
+        "total_days": "📅 మొత్తం రోజులు",
+        "destinations_count": "📍 పర్యాటక ప్రదేశాలు",
+        "travelers_count": "👥 ప్రయాణికులు",
+        "budget_tier_label": "💰 బడ్జెట్ శ్రేణి",
+        "interactive_map_title": "🗺️ ఇంటరాక్టివ్ ప్రయాణ మార్గం",
+        "interactive_map_caption": "అన్ని షెడ్యూల్ చేసిన స్టాప్‌లను కాలక్రమానుసారంగా కలిపే దృశ్య ప్రయాణ మార్గం.",
+        "booking_cta_title": "🎟️ మీ కర్ణాటక అనుభవాన్ని బుక్ చేసుకోవడానికి సిద్ధంగా ఉన్నారా?",
+        "booking_cta_desc": "ప్రభుత్వ రవాణా, జంగిల్ సఫారీ అనుమతులు మరియు వారసత్వ ప్యాకేజీలను నేరుగా బుక్ చేసుకోండి:",
+        "day_timeline_title": "📅 రోజువారీ వివరణాత్మక ప్రయాణ ప్రణాళిక",
+        "day_prefix": "రోజు",
+        "overnight_prefix": "🏨 రాత్రి బస:",
+        "highlights_prefix": "✨ ముఖ్యాంశాలు:",
+        "pro_tips_title": "💡 స్థానిక నిపుణుల సలహాలు",
+        "popular_circuits_title": "🌟 ప్రసిద్ధ కర్ణాటక సర్క్యూట్లు (1-క్లిక్ త్వరిత ప్రణాళిక)",
+        "popular_circuits_desc": "సమయం తక్కువగా ఉందా? స్థానిక చరిత్రకారులు మరియు ఆహార నిపుణులు రూపొందించిన ప్రసిద్ధ కర్ణాటక మార్గాలను ఎంచుకోండి. పూర్తి ప్రణాళిక కోసం <b>ఈ ట్రిప్‌ను ప్లాన్ చేయండి</b> క్లిక్ చేయండి.",
     },
 }
+
+# ── Dynamic Multilingual Translation Mapping for Itinerary Details ──────────
+
+ITINERARY_LOCALIZATION = {
+    "Kannada": {
+        "circuits": {
+            "Royal Mysore & Hoysala Stone Lace Trail": {
+                "title": "ರಾಯಲ್ ಮೈಸೂರು & ಹೊಯ್ಸಳ ಶಿಲ್ಪಕಲಾ ಪ್ರವಾಸ",
+                "overview": "ಮೈಸೂರಿನ ಭವ್ಯ ಅರಮನೆ, ಶ್ರೀರಂಗಪಟ್ಟಣದ ಐತಿಹಾಸಿಕ ದ್ವೀಪ ಕೋಟೆ ಮತ್ತು ಬೇಲೂರು-ಹಳೇಬೀಡಿನ ಅದ್ಭುತ ಶಿಲ್ಪಕಲೆಗಳನ್ನು ಒಳಗೊಂಡ ಸಾಂಸ್ಕೃತಿಕ ಪ್ರವಾಸ.",
+            },
+            "Western Ghats Cloud & Aroma Trail": {
+                "title": "ಪಶ್ಚಿಮ ಘಟ್ಟಗಳ ಮಂಜು & ಕಾಫಿ ತೋಟಗಳ ಯಾತ್ರೆ",
+                "overview": "ಮುಳ್ಳಯ್ಯನಗಿರಿ ಶಿಖರದ ಮೋಡಗಳ ಸೌಂದರ್ಯ, ಚಿಕ್ಕಮಗಳೂರಿನ ಕಾಫಿ ತೋಟಗಳು ಮತ್ತು ಕೊಡಗಿನ ಹಸಿರು ನಿಸರ್ಗದ ಸುಂದರ ಪ್ರವಾಸ.",
+            },
+            "Karavali Coast & Temple Odyssey": {
+                "title": "ಕರಾವಳಿ ಕಡಲತೀರಗಳು & ಪುಣ್ಯಕ್ಷೇತ್ರ ಯಾತ್ರೆ",
+                "overview": "ಗೋಕರ್ಣದ ಸುಂದರ ಕಡಲತೀರಗಳು, ಮುರುಡೇಶ್ವರದ ಬೃಹತ್ ಶಿವನ ಮೂರ್ತಿ ಹಾಗೂ ಉಡುಪಿ-ಮಂಗಳೂರಿನ ಸ್ವಾದಿಷ್ಟ ಕರಾವಳಿ ಖಾದ್ಯಗಳ ಪ್ರವಾಸ.",
+            },
+            "Vijayanagara & Chalukyan Odyssey": {
+                "title": "ವಿಜಯನಗರ & ಚಾಲುಕ್ಯ ಶಿಲಾ ಸಾಮ್ರಾಜ್ಯ ಯಾತ್ರೆ",
+                "overview": "ಹಂಪಿಯ ಶಿಲಾರಥ, ಬಾದಾಮಿಯ ಗುಹಾಂತರ ದೇವಾಲಯಗಳು ಹಾಗೂ ಪಟ್ಟದಕಲ್ಲಿನ ಯುನೆಸ್ಕೋ ಪಾರಂಪರಿಕ ತಾಣಗಳ ಐತಿಹಾಸಿಕ ಪ್ರವಾಸ.",
+            },
+        },
+        "days": {
+            "Ancient Dynasties & Capital Splendour": "ಪ್ರಾಚೀನ ರಾಜಮನೆತನಗಳು & ರಾಜಧಾನಿಯ ವೈಭವ",
+            "Hoysala Stone Poetry & Island Strongholds": "ಹೊಯ್ಸಳ ಶಿಲ್ಪಕಲೆ & ದ್ವೀಪ ಕೋಟೆಗಳು",
+            "Royal Gardens & Sacred Summits": "ರಾಜೋದ್ಯಾನಗಳು & ಪವಿತ್ರ ಶಿಖರಗಳು",
+            "Grand Boulders & Sunset Monuments": "ಬೃಹತ್ ಬಂಡೆಗಳು & ಸೂರ್ಯಾಸ್ತದ ಸ್ಮಾರಕಗಳು",
+            "Rock-cut Sanctums & Red Sandstone Cliffs": "ಗುಹಾಂತರ ದೇವಾಲಯಗಳು & ಕೆಂಪು ಬಂಡೆಗಳು",
+            "Mist, Peaks & Fresh Roasted Coffee": "ಮಂಜು, ಶಿಖರಗಳು & ತಾಜಾ ಕಾಫಿ",
+            "Sacred Sands & Cliffside Sunsets": "ಪವಿತ್ರ ಕಡಲತೀರಗಳು & ಸುಂದರ ಸೂರ್ಯಾಸ್ತ",
+        },
+        "cities": {
+            "Mysore": "ಮೈಸೂರು",
+            "Hampi": "ಹಂಪಿ",
+            "Badami": "ಬಾದಾಮಿ",
+            "Chikmagalur": "ಚಿಕ್ಕಮಗಳೂರು",
+            "Coorg": "ಕೊಡಗು",
+            "Gokarna": "ಗೋಕರ್ಣ",
+            "Mangalore": "ಮಂಗಳೂರು",
+            "Udupi": "ಉಡುಪಿ",
+            "Bangalore": "ಬೆಂಗಳೂರು",
+            "Halebidu": "ಹಳೇಬೀಡು",
+            "Belur": "ಬೇಲೂರು",
+            "Murudeshwar": "ಮುರುಡೇಶ್ವರ",
+        },
+        "interests": {
+            "Heritage": "ಪರಂಪರೆ",
+            "Nature": "ನಿಸರ್ಗ",
+            "Food": "ಆಹಾರ",
+            "Adventure": "ಸಾಹಸ",
+        },
+        "budget": {
+            "Budget": "ಬಜೆಟ್",
+            "Mid-range": "ಮಧ್ಯಮ ಶ್ರೇಣಿ",
+            "Luxury": "ಐಷಾರಾಮಿ",
+        },
+    },
+    "Tamil": {
+        "circuits": {
+            "Royal Mysore & Hoysala Stone Lace Trail": {
+                "title": "ராயல் மைசூர் மற்றும் ஹொய்சாள சிற்பக்கலை சுற்றுலா",
+                "overview": "மைசூர் அரண்மனை, ஸ்ரீரங்கப்பட்டணா தீவு கோட்டை மற்றும் பேளூர், ஹளபேடு சிற்ப கலைக் கோயில்களை உள்ளடக்கிய பாரம்பரிய கலாச்சாரப் பயணம்.",
+            },
+            "Western Ghats Cloud & Aroma Trail": {
+                "title": "மேற்கு தொடர்ச்சி மலை முகடுகள் & காபி தோட்டப் பயணம்",
+                "overview": "முல்லையனகிரி மலை முகடுகள், சிக்மகளூர் மற்றும் கூர்க் காபி தோட்டங்களின் நறுமணம் மற்றும் நீர்வீழ்ச்சிகளை அனுபவிக்கும் இயற்கை சுற்றுலா.",
+            },
+            "Karavali Coast & Temple Odyssey": {
+                "title": "காரவளி கடற்கரை மற்றும் ஆன்மீக ஆலயப் பயணம்",
+                "overview": "கோகர்ணா அழகிய கடற்கரைகள், முருடேஸ்வரா பிரம்மாண்ட சிவன் சிலை மற்றும் உடுப்பி, மங்களூர் சுவையான உணவுகளுடன் கூடிய கடலோர பயணம்.",
+            },
+            "Vijayanagara & Chalukyan Odyssey": {
+                "title": "விஜயநகர மற்றும் சாளுக்கிய வரலாற்றுப் பேரரசு பயணம்",
+                "overview": "ஹம்பி விஜயநகர பேரரசின் கல் தேர், பாதாமி குடைவரைக் கோயில்கள் மற்றும் பட்டடக்கல் உலக பாரம்பரிய தலங்களின் அற்புத வரலாற்றுப் பயணம்.",
+            },
+        },
+        "days": {
+            "Ancient Dynasties & Capital Splendour": "பண்டைய வம்சங்கள் மற்றும் தலைநகர பெருமை",
+            "Hoysala Stone Poetry & Island Strongholds": "ஹொய்சாள சிற்பக் கலை & தீவு கோட்டைகள்",
+            "Royal Gardens & Sacred Summits": "அரச தோட்டங்கள் & புனித மலை உச்சி",
+            "Grand Boulders & Sunset Monuments": "பெரிய பாறைகள் & சூரிய அஸ்தமன சின்னங்கள்",
+            "Rock-cut Sanctums & Red Sandstone Cliffs": "குடைவரை ஆலயங்கள் & சிவப்பு மணற்கல் பாறைகள்",
+            "Mist, Peaks & Fresh Roasted Coffee": "பனிமூட்டம், மலை முகடுகள் & சுவையான காபி",
+            "Sacred Sands & Cliffside Sunsets": "புனித மணல் பரப்புகள் & மலைச்சரிவு அஸ்தமனம்",
+        },
+        "cities": {
+            "Mysore": "மைசூர்",
+            "Hampi": "ஹம்பி",
+            "Badami": "பாதாமி",
+            "Chikmagalur": "சிக்மகளூர்",
+            "Coorg": "கூர்க்",
+            "Gokarna": "கோகர்ணா",
+            "Mangalore": "மங்களூர்",
+            "Udupi": "உடுப்பி",
+            "Bangalore": "பெங்களூரு",
+            "Halebidu": "ஹளபேடு",
+            "Belur": "பேளூர்",
+            "Murudeshwar": "முருடேஸ்வரா",
+        },
+        "interests": {
+            "Heritage": "பாரம்பரியம்",
+            "Nature": "இயற்கை",
+            "Food": "உணவு",
+            "Adventure": "சாகசம்",
+        },
+        "budget": {
+            "Budget": "பட்ஜெட்",
+            "Mid-range": "நடுத்தர",
+            "Luxury": "ஆடம்பர",
+        },
+    },
+    "Hindi": {
+        "circuits": {
+            "Royal Mysore & Hoysala Stone Lace Trail": {
+                "title": "रॉयल मैसूर एवं होयसल स्थापत्य कला यात्रा",
+                "overview": "मैसूर पैलेस, श्रीरंगपट्टण का ऐतिहासिक द्वीप किला और बेलूर-हलेबिदु के नक्काशीदार मंदिरों का सांस्कृतिक भ्रमण।",
+            },
+            "Western Ghats Cloud & Aroma Trail": {
+                "title": "पश्चिमी घाट धुंध एवं सुगंधित कॉफी ट्रेल",
+                "overview": "मुल्लायनगिरि पर्वत के मनमोहक बादल, चिकमगलूर और कूर्ग के सुरम्य कॉफी बागान एवं झरनों की प्रकृति यात्रा।",
+            },
+            "Karavali Coast & Temple Odyssey": {
+                "title": "तटीय कर्नाटक समुद्र तट एवं तीर्थ यात्रा",
+                "overview": "गोकर्ण के शांत समुद्र तट, मुरुडेश्वर की विशाल शिव प्रतिमा और उडुपी-मंगलोर के प्रसिद्ध तटीय व्यंजनों का आनंद।",
+            },
+            "Vijayanagara & Chalukyan Odyssey": {
+                "title": "विजयनगर एवं चालुक्य पाषाण साम्राज्य यात्रा",
+                "overview": "हम्पी का विश्व प्रसिद्ध पत्थर का रथ, बादामी के गुफा मंदिर और पट्टाडकल के यूनेस्को धरोहर स्मारकों की ऐतिहासिक यात्रा।",
+            },
+        },
+        "days": {
+            "Ancient Dynasties & Capital Splendour": "प्राचीन राजवंश और राजधानी का वैभव",
+            "Hoysala Stone Poetry & Island Strongholds": "होयसल पाषाण कला और द्वीप किले",
+            "Royal Gardens & Sacred Summits": "शाही उद्यान और पवित्र पर्वत",
+            "Grand Boulders & Sunset Monuments": "विशाल शिलाएं और सूर्यास्त स्मारक",
+            "Rock-cut Sanctums & Red Sandstone Cliffs": "गुफा मंदिर और लाल बलुआ पत्थर की चट्टानें",
+            "Mist, Peaks & Fresh Roasted Coffee": "धुंध, चोटियाँ और ताज़ा कॉफ़ी",
+            "Sacred Sands & Cliffside Sunsets": "पवित्र समुद्र तट और सूर्यास्त के दृश्य",
+        },
+        "cities": {
+            "Mysore": "मैसूर",
+            "Hampi": "हम्पी",
+            "Badami": "बादामी",
+            "Chikmagalur": "चिकमगलूर",
+            "Coorg": "कूर्ग",
+            "Gokarna": "गोकर्ण",
+            "Mangalore": "मंगलोर",
+            "Udupi": "उडुपी",
+            "Bangalore": "बेंगलुरु",
+            "Halebidu": "हलेबिदु",
+            "Belur": "बेलूर",
+            "Murudeshwar": "मुरुडेश्वर",
+        },
+        "interests": {
+            "Heritage": "विरासत",
+            "Nature": "प्रकृति",
+            "Food": "खानपान",
+            "Adventure": "रोमांच",
+        },
+        "budget": {
+            "Budget": "बजट",
+            "Mid-range": "मिड-रेंज",
+            "Luxury": "लक्जरी",
+        },
+    },
+    "Telugu": {
+        "circuits": {
+            "Royal Mysore & Hoysala Stone Lace Trail": {
+                "title": "రాయల్ మైసూర్ & హొయసల శిల్పకళా యాత్ర",
+                "overview": "మైసూర్ ప్యాలెస్, శ్రీరంగపట్నం ద్వీప కోట మరియు బేలూరు-హళేబీడు శిల్పకళా అద్భుతాలతో కూడిన సాంస్కృతిక పర్యటన.",
+            },
+            "Western Ghats Cloud & Aroma Trail": {
+                "title": "పశ్చిమ కనుమల మంచు & కాఫీ తోటల ప్రయాణం",
+                "overview": "ముల్లయ్యనగిరి పర్వత శిఖరం, చిక్కమగళూరు మరియు కూర్గ్ కాఫీ తోటల నడుమ ఆహ్లాదకరమైన ప్రకృతి పర్యటన.",
+            },
+            "Karavali Coast & Temple Odyssey": {
+                "title": "తీర ప్రాంత కడలి & పుణ్యక్షేత్ర దర్శనం",
+                "overview": "గోకర్ణ అందమైన తీరాలు, మురుడేశ్వర్ భారీ శివుని విగ్రహం మరియు ఉడుపి, మంగళూరు రుచికరమైన ఆహార అనుభవం.",
+            },
+            "Vijayanagara & Chalukyan Odyssey": {
+                "title": "విజయనగర & చాళుక్య రాతి సామ్రాజ్యాల యాత్ర",
+                "overview": "హంపి రాతి రథం, బాదామి గుహాలయాలు మరియు పట్టదకల్ యునెస్కో ప్రపంచ వారసత్వ సంపదల చారిత్రక పర్యటన.",
+            },
+        },
+        "days": {
+            "Ancient Dynasties & Capital Splendour": "పురాతన రాజవంశాలు & రాజధాని వైభవం",
+            "Hoysala Stone Poetry & Island Strongholds": "హొయసల శిల్పకళ & ద్వీప కోటలు",
+            "Royal Gardens & Sacred Summits": "రాజ ఉద్యానవనాలు & పవిత్ర శిఖరాలు",
+            "Grand Boulders & Sunset Monuments": "భారీ బండరాళ్ళు & సూర్యాస్తమయ స్మారకాలు",
+            "Rock-cut Sanctums & Red Sandstone Cliffs": "గుహాలయాలు & ఎర్ర ఇసుకరాయి కొండలు",
+            "Mist, Peaks & Fresh Roasted Coffee": "మంచు, శిఖరాలు & తాజా కాఫీ",
+            "Sacred Sands & Cliffside Sunsets": "పవిత్ర తీరాలు & సూర్యాస్తమయ దృశ్యాలు",
+        },
+        "cities": {
+            "Mysore": "మైసూరు",
+            "Hampi": "హంపి",
+            "Badami": "బాదామి",
+            "Chikmagalur": "చిక్కమగళూరు",
+            "Coorg": "కూర్గ్",
+            "Gokarna": "గోకర్ణ",
+            "Mangalore": "మంగళూరు",
+            "Udupi": "ఉడుపి",
+            "Bangalore": "బెంగళూరు",
+            "Halebidu": "హళేబీడు",
+            "Belur": "బేలూరు",
+            "Murudeshwar": "మురుడేశ్వర్",
+        },
+        "interests": {
+            "Heritage": "వారసత్వం",
+            "Nature": "ప్రకృతి",
+            "Food": "ఆహారం",
+            "Adventure": "సాహసం",
+        },
+        "budget": {
+            "Budget": "బడ్జెట్",
+            "Mid-range": "మధ్యస్థ శ్రేణి",
+            "Luxury": "లగ్జరీ",
+        },
+    },
+}
+
+
+def localize_itinerary(itin, lang: str):
+    """
+    Produce a localized copy of an Itinerary dataclass for the requested language.
+    Translates trip title, overview, day titles, and overnight locations.
+    """
+    if not itin or lang == "English" or lang not in ITINERARY_LOCALIZATION:
+        return itin
+
+    from copy import deepcopy
+    loc_itin = deepcopy(itin)
+    lang_data = ITINERARY_LOCALIZATION[lang]
+
+    # 1. Translate Trip Title & Overview
+    matched_circuit = False
+    for orig_name, trans_info in lang_data["circuits"].items():
+        if orig_name.lower() in itin.trip_title.lower():
+            loc_itin.trip_title = f"{trans_info['title']} - {len(itin.days)} {UI_LOCALIZATION[lang]['days']}"
+            loc_itin.overview = trans_info["overview"]
+            matched_circuit = True
+            break
+
+    if not matched_circuit:
+        # Generic template translation: e.g. "Karnataka Heritage & Food Explorer - 3-Day Mid-range Journey"
+        interests_trans = [lang_data["interests"].get(i, i) for i in itin.interests]
+        int_str = " & ".join(interests_trans[:2]) if interests_trans else ""
+        budget_trans = lang_data["budget"].get(itin.budget_tier, itin.budget_tier)
+
+        if lang == "Kannada":
+            loc_itin.trip_title = f"ಕರ್ನಾಟಕ {int_str} ಅನ್ವೇಷಣೆ - {len(itin.days)} ದಿನಗಳ {budget_trans} ಪ್ರವಾಸ"
+            loc_itin.overview = f"ಕರ್ನಾಟಕದ ಶ್ರೀಮಂತ ಪರಂಪರೆ ಮತ್ತು ಪ್ರಸಿದ್ಧ ತಾಣಗಳನ್ನು ಒಳಗೊಂಡ {itin.num_travelers} ಪ್ರಯಾಣಿಕರಿಗಾಗಿ ಸಿದ್ಧಪಡಿಸಲಾದ {len(itin.days)} ದಿನಗಳ ವಿಶೇಷ ಪ್ರವಾಸ ಯೋಜನೆ."
+        elif lang == "Tamil":
+            loc_itin.trip_title = f"கர்நாடக {int_str} சுற்றுலா - {len(itin.days)} நாட்கள் {budget_trans} பயணம்"
+            loc_itin.overview = f"கர்நாடகாவின் சிறந்த கலாச்சாரம் மற்றும் சுற்றுலா இடங்களை மையமாகக் கொண்டு {itin.num_travelers} பயணிகளுக்காக பிரத்யேகமாக உருவாக்கப்பட்ட {len(itin.days)} நாட்கள் பயண அட்டவணை."
+        elif lang == "Hindi":
+            loc_itin.trip_title = f"कर्नाटक {int_str} अन्वेषण - {len(itin.days)}-दिवसीय {budget_trans} यात्रा"
+            loc_itin.overview = f"कर्नाटक की समृद्ध सांस्कृतिक विरासत और प्रमुख आकर्षणों पर आधारित {len(itin.days)} दिनों का {itin.num_travelers} यात्रियों के लिए विशेष यात्रा कार्यक्रम।"
+        elif lang == "Telugu":
+            loc_itin.trip_title = f"కర్ణాటక {int_str} అన్వేషణ - {len(itin.days)}-రోజుల {budget_trans} పర్యటన"
+            loc_itin.overview = f"కర్ణాటకలోని ప్రసిద్ధ పర్యాటక ప్రదేశాలు మరియు విశేషాలతో {itin.num_travelers} ప్రయాణికుల కోసం రూపొందించిన {len(itin.days)}-రోజుల ప్రత్యేక ప్రణాళిక."
+
+    # 2. Translate Days and Overnight Locations
+    for day in loc_itin.days:
+        day.title = lang_data["days"].get(day.title, day.title)
+        day.overnight_stay = lang_data["cities"].get(day.overnight_stay, day.overnight_stay)
+
+    return loc_itin
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -79,14 +79,220 @@ class Itinerary:
 # 2.  GEMINI API INTEGRATION
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+def get_gemini_api_key() -> str:
+    """
+    Resolve Gemini API key across multiple sources:
+    1. Streamlit session_state (user entered in UI)
+    2. Streamlit Cloud Secrets (st.secrets["GEMINI_API_KEY"] or st.secrets["GOOGLE_API_KEY"])
+    3. Environment variables (os.environ["GEMINI_API_KEY"] or os.environ["GOOGLE_API_KEY"])
+    """
+    # 1. Streamlit session_state
+    try:
+        import streamlit as st
+        key = st.session_state.get("gemini_api_key", "").strip()
+        if key and key != "your_gemini_api_key_here":
+            return key
+    except Exception:
+        pass
+
+    # 2. Streamlit Cloud Secrets
+    try:
+        import streamlit as st
+        if hasattr(st, "secrets"):
+            for sec_name in ["GEMINI_API_KEY", "GOOGLE_API_KEY", "gemini_api_key", "google_api_key"]:
+                if sec_name in st.secrets and st.secrets[sec_name]:
+                    val = str(st.secrets[sec_name]).strip()
+                    if val and val != "your_gemini_api_key_here":
+                        return val
+    except Exception:
+        pass
+
+    # 3. Environment variables
+    for env_name in ["GEMINI_API_KEY", "GOOGLE_API_KEY"]:
+        val = os.getenv(env_name, "").strip()
+        if val and val != "your_gemini_api_key_here":
+            return val
+
+    return ""
+
+
 def _get_gemini_model(model_name: Optional[str] = None):
     """
     Initialise and return a Gemini GenerativeModel.
     Supports custom model names via GEMINI_MODEL env var or fallback hierarchy.
     """
-    api_key = os.getenv("GEMINI_API_KEY", "").strip()
-    if not api_key or api_key == "your_gemini_api_key_here":
+    api_key = get_gemini_api_key()
+    if not api_key:
         return None
+
+    try:
+        import google.generativeai as genai
+        genai.configure(api_key=api_key)
+
+        # Priority: explicit param -> GEMINI_MODEL in env -> modern defaults
+        target_model = model_name or os.getenv("GEMINI_MODEL", "gemini-2.5-flash").strip()
+        if not target_model:
+            target_model = "gemini-2.5-flash"
+
+        model = genai.GenerativeModel(target_model)
+        return model
+    except Exception as e:
+        print(f"[KannadaYatra AI] Gemini model init warning: {e}")
+        return None
+
+
+def _build_itinerary_prompt(
+    interests: List[str],
+    budget_tier: str,
+    days: int,
+    travelers: int,
+    companions: str,
+    language: str = "English",
+) -> str:
+    """Construct a detailed prompt for AI itinerary generation."""
+    available = filter_destinations(interests, max_results=20)
+    dest_names = [d.name for d in available]
+
+    lang_instruction = ""
+    if language != "English":
+        lang_instruction = f"\nIMPORTANT: Write the trip_title, overview, each day title, activity descriptions, and travel tips in {language} language."
+
+    return f"""You are KannadaYatra AI - an expert Karnataka travel planner.
+
+Generate a {days}-day Karnataka travel itinerary with the following constraints:
+- Interests: {', '.join(interests)}
+- Budget Level: {budget_tier}
+- Number of Travelers: {travelers}
+- Travel Companions: {companions}
+- User Language: {language}{lang_instruction}
+
+Available Karnataka destinations to choose from (pick the best fit):
+{', '.join(dest_names)}
+
+RESPOND IN VALID JSON ONLY. Use this exact structure:
+{{
+  "trip_title": "A catchy title for the trip",
+  "overview": "2-3 sentence trip overview",
+  "days": [
+    {{
+      "day_number": 1,
+      "title": "Day theme title",
+      "overnight_stay": "City name",
+      "day_highlights": ["highlight 1", "highlight 2"],
+      "slots": [
+        {{
+          "time": "09:00 AM",
+          "activity": "Activity title",
+          "destination": "Exact destination name from the list",
+          "description": "1-2 sentence description of the activity",
+          "duration_hrs": 2.5,
+          "travel_tip": "Useful tip for this activity"
+        }}
+      ]
+    }}
+  ],
+  "pro_tips": ["tip 1", "tip 2", "tip 3"]
+}}
+
+Requirements:
+1. Each day should have 3-5 activity slots from morning to evening.
+2. Activities should be logically sequenced (nearby locations together).
+3. Include travel time between destinations.
+4. Match activities to the {budget_tier} budget level.
+5. Include local food recommendations for each day.
+6. Make the itinerary practical and realistic, not rushed.
+7. For {companions} travelers, ensure activities are suitable.
+
+Return ONLY the JSON, no markdown formatting or explanation."""
+
+
+def _parse_gemini_response(text: str) -> Optional[Dict]:
+    """Extract and parse JSON from the Gemini response text."""
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        pass
+
+    json_match = re.search(r"```(?:json)?\s*\n(.*?)\n```", text, re.DOTALL)
+    if json_match:
+        try:
+            return json.loads(json_match.group(1))
+        except json.JSONDecodeError:
+            pass
+
+    brace_match = re.search(r"\{.*\}", text, re.DOTALL)
+    if brace_match:
+        try:
+            return json.loads(brace_match.group())
+        except json.JSONDecodeError:
+            pass
+
+    return None
+
+
+def _is_api_reachable(timeout: float = 3.0) -> bool:
+    """Probe to ensure Google Gemini endpoint is reachable. Permissive fallback for containers."""
+    import socket
+    try:
+        sock = socket.create_connection(("generativelanguage.googleapis.com", 443), timeout=timeout)
+        sock.close()
+        return True
+    except Exception:
+        # In cloud containers, socket probes can fail while HTTP succeeds; proceed to SDK
+        return True
+
+
+def generate_ai_itinerary(
+    interests: List[str],
+    budget_tier: str,
+    days: int,
+    travelers: int,
+    companions: str,
+    language: str = "English",
+) -> Optional[Itinerary]:
+    """
+    Attempt to generate an itinerary via Google Gemini with safety timeout.
+    Returns an Itinerary dataclass or None on failure (falling back to curated immediately).
+    """
+    api_key = get_gemini_api_key()
+    if not api_key:
+        return None
+
+    configured_model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash").strip()
+    model_name = configured_model or "gemini-2.5-flash"
+    prompt = _build_itinerary_prompt(interests, budget_tier, days, travelers, companions, language=language)
+
+    try:
+        import socket
+        orig_timeout = socket.getdefaulttimeout()
+        socket.setdefaulttimeout(7.0)
+
+        model = _get_gemini_model(model_name)
+        if model is None:
+            return None
+
+        response = model.generate_content(
+            prompt,
+            generation_config={
+                "temperature": 0.7,
+                "max_output_tokens": 4096,
+            },
+        )
+        parsed = _parse_gemini_response(response.text)
+        if parsed is not None:
+            return _dict_to_itinerary(parsed, interests, budget_tier, travelers)
+
+    except Exception as e:
+        print(f"[KannadaYatra AI] AI generation fallback triggered: {e}")
+        return None
+    finally:
+        try:
+            socket.setdefaulttimeout(orig_timeout)
+        except Exception:
+            pass
+
+    return None
+
 
     try:
         import google.generativeai as genai
@@ -565,11 +771,12 @@ def generate_itinerary(
     travelers: int,
     companions: str = "Friends",
     fast_launch: bool = False,
+    language: str = "English",
 ) -> Tuple[Itinerary, bool]:
     """
     Generate a trip itinerary. If fast_launch is True (e.g. for 1-click circuits
     or instant previews), generates immediately from curated routes (< 5ms).
-    Otherwise attempts Gemini AI with a tight timeout before falling back.
+    Otherwise attempts Gemini AI with a safety timeout before falling back.
 
     Returns:
         (Itinerary, ai_used: bool)
@@ -577,6 +784,16 @@ def generate_itinerary(
     if fast_launch:
         curated = generate_curated_itinerary(interests, budget_tier, days, travelers, companions)
         return curated, False
+
+    # Attempt AI generation if key is present
+    if get_gemini_api_key():
+        ai_result = generate_ai_itinerary(interests, budget_tier, days, travelers, companions, language=language)
+        if ai_result is not None and len(ai_result.days) > 0:
+            return ai_result, True
+
+    # Fallback to curated engine
+    curated = generate_curated_itinerary(interests, budget_tier, days, travelers, companions)
+    return curated, False
 
     # Attempt AI generation
     ai_result = generate_ai_itinerary(interests, budget_tier, days, travelers, companions)
