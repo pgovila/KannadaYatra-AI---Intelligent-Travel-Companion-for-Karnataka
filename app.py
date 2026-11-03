@@ -686,11 +686,14 @@ elif selected_nav == "builder":
                 help="Budget: ₹1.5K-3K/day · Mid-range: ₹4K-8K/day · Luxury: ₹10K-25K/day",
             )
         with col_b4:
-            travelers_input = st.number_input(
+            t_val = st.session_state.get("trip_prefs", {}).get("travelers", 2)
+            t_opts = list(range(1, 21))
+            t_idx = t_opts.index(t_val) if t_val in t_opts else 1
+            travelers_input = st.selectbox(
                 "Number of Travelers",
-                min_value=1,
-                max_value=20,
-                value=st.session_state.get("trip_prefs", {}).get("travelers", 2),
+                options=t_opts,
+                index=t_idx,
+                help="Group size: 1 to 20 travelers",
             )
         with col_b5:
             companions_input = st.selectbox(
@@ -724,6 +727,7 @@ elif selected_nav == "builder":
                     days=days_input,
                     travelers=travelers_input,
                     companions=companions_input,
+                    language=cur_app_lang,
                 )
                 budget_data = compute_trip_budget(budget_input, days_input, travelers_input)
 
