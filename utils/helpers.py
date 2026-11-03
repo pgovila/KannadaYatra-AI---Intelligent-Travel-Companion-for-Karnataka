@@ -797,7 +797,7 @@ GANDABERUNDA_HERITAGE_BADGE_HTML = f"""<div style="background:linear-gradient(13
 
 CUSTOM_CSS = """
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Kannada:wght@400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Kannada:wght@400;600;700&display=swap');
 
     /* ── Hide the default Streamlit sidebar for clean top-nav website look ── */
     [data-testid="stSidebar"] {
@@ -1096,6 +1096,202 @@ CUSTOM_CSS = """
     }
 
     /* ── Hero Banner ───────────────────────────────── */
+    
+    /* ── Karnataka Tourism Official Portal Styles ─────── */
+    .karnataka-hero-portal {
+        position: relative;
+        overflow: hidden;
+        border-radius: 24px;
+        background-color: #0b0f19;
+        background-image: 
+            linear-gradient(180deg, rgba(11, 15, 25, 0.72) 0%, rgba(11, 15, 25, 0.52) 45%, rgba(11, 15, 25, 0.92) 100%),
+            url('https://web-cms.karnatakatourism.org/wp-content/uploads/2025/07/mysore-palace-illuminated-1.jpg'),
+            url('https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=1600&q=80');
+        background-size: cover;
+        background-position: center 32%;
+        padding: 3.2rem 2.4rem 2.2rem 2.4rem;
+        margin-bottom: 1.4rem;
+        box-shadow: 0 16px 48px rgba(0,0,0,0.28);
+        border: 1px solid rgba(255,255,255,0.18);
+        text-align: center;
+        color: #FFFFFF !important;
+    }
+    .karnataka-hero-portal * {
+        color: #FFFFFF !important;
+    }
+    .hero-top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-bottom: 1.6rem;
+    }
+    .gov-badge-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255,255,255,0.14);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.28);
+        border-radius: 30px;
+        padding: 0.35rem 1.1rem;
+        color: #FEF3C7 !important;
+        font-weight: 800;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+    .gandaberunda-seal-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(135deg, rgba(136,19,27,0.85), rgba(217,119,6,0.85));
+        border: 1.5px solid #F59E0B;
+        border-radius: 30px;
+        padding: 0.35rem 1rem;
+        color: #FFFFFF !important;
+        font-weight: 800;
+        font-size: 0.8rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .karnataka-kicker {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: 7px;
+        color: #F59E0B !important;
+        text-transform: uppercase;
+        margin-bottom: 0.35rem;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+    }
+    .karnataka-hero-title {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 3.6rem;
+        font-weight: 800;
+        color: #FFFFFF !important;
+        line-height: 1.15;
+        margin: 0 auto 0.5rem auto;
+        text-shadow: 0 4px 24px rgba(0,0,0,0.85);
+        font-style: italic;
+    }
+    .karnataka-hero-sub {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #FEF3C7 !important;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    }
+    .karnataka-hero-desc {
+        max-width: 860px;
+        margin: 0 auto 1.8rem auto;
+        font-size: 1.05rem;
+        color: rgba(255,255,255,0.92) !important;
+        line-height: 1.6;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+    }
+    .karnataka-cta-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 1.4rem;
+        flex-wrap: wrap;
+    }
+    .karnataka-cta-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        color: #FFFFFF !important;
+        font-weight: 800;
+        font-size: 1.05rem;
+        padding: 0.85rem 2.2rem;
+        border-radius: 40px;
+        box-shadow: 0 6px 25px rgba(16,185,129,0.45);
+        border: 1.5px solid rgba(255,255,255,0.35);
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.25s ease;
+    }
+    .karnataka-pills-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 1.2rem;
+    }
+    .k-pill {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(8px);
+        color: #FFFFFF !important;
+        font-weight: 600;
+        font-size: 0.85rem;
+        padding: 0.45rem 1.1rem;
+        border-radius: 30px;
+        border: 1px solid rgba(255,255,255,0.22);
+    }
+    .k-pill.trending {
+        background: rgba(217, 119, 6, 0.45);
+        border-color: #F59E0B;
+        color: #FEF3C7 !important;
+        font-weight: 800;
+    }
+    .karnataka-hero-footer-bar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 2rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid rgba(255,255,255,0.18);
+        font-size: 0.82rem;
+        color: #FEF3C7 !important;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .karnataka-hero-footer-bar * {
+        color: #FEF3C7 !important;
+    }
+
+    /* Leadership Ribbon matching karnatakatourism.org */
+    .karnataka-leaders-ribbon {
+        background: #FFFFFF;
+        border: 1.5px solid #E5E7EB;
+        border-radius: 20px;
+        padding: 1.1rem 1.6rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.4rem;
+    }
+    .leader-card {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    .leader-avatar {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2.5px solid #88131B;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .leader-name {
+        font-size: 0.85rem;
+        font-weight: 800;
+        color: #111827 !important;
+        letter-spacing: 0.5px;
+    }
+    .leader-role {
+        font-size: 0.75rem;
+        color: #6B7280 !important;
+        font-weight: 600;
+        line-height: 1.25;
+    }
+
     .hero-banner {
         background: linear-gradient(135deg, #7A0C16 0%, #A61B24 45%, #D97706 80%, #F59E0B 100%);
         padding: 2.4rem 2.8rem;
@@ -1514,30 +1710,73 @@ def inject_custom_css() -> None:
 
 
 def render_hero_banner() -> None:
-    """Render the top hero / branding banner with Karnataka cultural motifs and flag ribbon."""
-    html_content = """<div class="hero-banner">
-<div style="height: 4px; width: 100%; background: linear-gradient(90deg, #DC2626 0%, #DC2626 50%, #FBBF24 50%, #FBBF24 100%); border-radius: 4px; margin-bottom: 1.1rem; opacity: 0.95;"></div>
-<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem; flex-wrap:wrap; gap:0.5rem;">
-<div style="text-transform:uppercase; font-size:0.82rem; font-weight:800; letter-spacing:1.5px; color:#FEF3C7 !important;">
-ಕರ್ನಾಟಕ ಸರ್ಕಾರ • KANNADA DIGITAL INNOVATION HACKATHON 2026
+    """Render the official Karnataka Tourism-styled dynamic cinematic hero and leadership ribbon."""
+    html_content = """<div class="karnataka-hero-portal">
+<div class="hero-top-bar">
+    <div class="gov-badge-pill">
+        <span>🏛️</span>
+        <span>ಕರ್ನಾಟಕ ಸರ್ಕಾರ • KANNADA DIGITAL INNOVATION HACKATHON 2026</span>
+    </div>
+    <div class="gandaberunda-seal-pill">
+        <span style="font-size:1.1rem;">👑</span>
+        <span>Gandaberunda Royal Seal Verified</span>
+    </div>
 </div>
-<div style="background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.35); border-radius:15px; padding:0.25rem 0.8rem; font-size:0.75rem; font-weight:800; color:#FFFFFF !important; display:flex; align-items:center; gap:5px;">
-<span>🦅</span> Gandaberunda Heritage Seal
-</div>
-</div>
-<h1 style="color:#FFFFFF !important; font-size:2.6rem; font-weight:800; margin:0 0 0.4rem 0; text-shadow:0 2px 8px rgba(0,0,0,0.4);">🏛️ KannadaYatra AI</h1>
-<div class="subtitle" style="color:#FEF3C7 !important; font-size:1.25rem; font-weight:700; margin-bottom:0.8rem;">Experience Karnataka Like a Local, Not Just a Tourist</div>
-<p style="font-size:1.05rem; color:#FFFFFF !important; max-width:880px; margin:0 auto 1.2rem auto; line-height:1.6; text-shadow:0 1px 3px rgba(0,0,0,0.3);">
-Hyper-personalized AI travel planning powered by living cultural context, 
-phonetically-taught Kannada survival phrases, real-world transit feasibility, and secret culinary trails.
+
+<div class="karnataka-kicker">K A R N A T A K A</div>
+<div class="karnataka-hero-title">One State, Many Worlds.</div>
+<div class="karnataka-hero-sub">KannadaYatra AI • ಕರ್ನಾಟಕ ಪ್ರವಾಸ ಸಹಾಯಕ</div>
+
+<p class="karnataka-hero-desc">
+    Your intelligent, hyper-personalized AI travel companion for Karnataka. 
+    Experience Karnataka like a local, not just a tourist, with living cultural deep-dives, 
+    phonetically-taught 5-language survival phrases, real-world KSRTC transit feasibility, and secret culinary trails.
 </p>
-<div class="pill-row" style="justify-content:center;">
-<span class="pill" style="color:#FFFFFF !important; background:rgba(0,0,0,0.3) !important; border:1px solid rgba(255,255,255,0.4) !important;">✨ Dual-Engine AI (Gemini 2.5 + Offline Fallback)</span>
-<span class="pill" style="color:#FFFFFF !important; background:rgba(0,0,0,0.3) !important; border:1px solid rgba(255,255,255,0.4) !important;">🗣️ 60+ Kannada Voice Phrases</span>
-<span class="pill" style="color:#FFFFFF !important; background:rgba(0,0,0,0.3) !important; border:1px solid rgba(255,255,255,0.4) !important;">🚌 KSRTC & KSTDC Transit Engine</span>
-<span class="pill" style="color:#FFFFFF !important; background:rgba(0,0,0,0.3) !important; border:1px solid rgba(255,255,255,0.4) !important;">🍛 Secret Darshini Food Trail</span>
-<span class="pill" style="color:#FFFFFF !important; background:rgba(0,0,0,0.3) !important; border:1px solid rgba(255,255,255,0.4) !important;">💰 Smart Budget Optimizer</span>
+
+<div class="karnataka-cta-wrapper">
+    <div class="karnataka-cta-pill">
+        <span>✨ Explore Itineraries Around You</span>
+        <span style="font-size:1.2rem;">➔</span>
+    </div>
 </div>
+
+<div class="karnataka-pills-row">
+    <span class="k-pill trending">🔥 What's trending?</span>
+    <span class="k-pill">👑 Royal Wadiyar Heritage</span>
+    <span class="k-pill">☕ Misty Ghats & Coffee</span>
+    <span class="k-pill">🌊 Karavali Coast & Sands</span>
+    <span class="k-pill">🏛️ UNESCO Stone Empires</span>
+</div>
+
+<div class="karnataka-hero-footer-bar">
+    <div>🔈 <b>Audio Synthesizer:</b> Natural spoken Kannada voice active</div>
+    <div>📍 <b>Zero Map Paywall:</b> Watermark-free OpenStreetMap</div>
+    <div>⚡ <b>Dual-Engine AI:</b> Gemini 2.5 Flash + 6ms Offline Fallback</div>
+</div>
+</div>
+
+<div class="karnataka-leaders-ribbon">
+    <div class="leader-card">
+        <img src="https://karnatakatourism.org/_next/static/media/Shivakumar.36bratp10ova5.jpg" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/D._K._Shivakumar_in_2023.jpg/180px-D._K._Shivakumar_in_2023.jpg';" class="leader-avatar" alt="Shri D.K. Shivakumar" />
+        <div class="leader-info">
+            <div class="leader-name">SHRI D.K. SHIVAKUMAR</div>
+            <div class="leader-role">Hon'ble Deputy Chief Minister<br/>Government of Karnataka</div>
+        </div>
+    </div>
+    <div class="leader-card">
+        <img src="https://karnatakatourism.org/_next/static/media/Parameshwara.12rtqu46culry.png" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Dr._G._Parameshwara.jpg/180px-Dr._G._Parameshwara.jpg';" class="leader-avatar" alt="Dr. G. Parameshwara" />
+        <div class="leader-info">
+            <div class="leader-name">DR. G. PARAMESHWARA</div>
+            <div class="leader-role">Hon'ble Home Minister<br/>Government of Karnataka</div>
+        </div>
+    </div>
+    <div class="leader-card">
+        <img src="https://karnatakatourism.org/_next/static/media/Geroge.40l8db8ixkxzd.png" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/K._J._George.jpg/180px-K._J._George.jpg';" class="leader-avatar" alt="Shri K. J. George" />
+        <div class="leader-info">
+            <div class="leader-name">SHRI K. J. GEORGE</div>
+            <div class="leader-role">Hon'ble Minister for Tourism<br/>Government of Karnataka</div>
+        </div>
+    </div>
 </div>"""
     st.markdown(html_content, unsafe_allow_html=True)
 

@@ -69,24 +69,7 @@ init_session_state()
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 def render_onboarding_tutorial():
-    st.markdown(
-        f"""<div class="hero-banner" style="margin-bottom:1.4rem;">
-<div style="height: 4px; width: 100%; background: linear-gradient(90deg, #DC2626 0%, #DC2626 50%, #FBBF24 50%, #FBBF24 100%); border-radius: 4px; margin-bottom: 1.1rem; opacity: 0.95;"></div>
-<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem; flex-wrap:wrap; gap:0.5rem;">
-<div style="text-transform:uppercase; font-size:0.82rem; font-weight:800; letter-spacing:1.5px; color:#FEF3C7 !important;">
-ಕರ್ನಾಟಕ ಸರ್ಕಾರ • KANNADA DIGITAL INNOVATION HACKATHON 2026
-</div>
-{GANDABERUNDA_HERITAGE_BADGE_HTML}
-</div>
-<h1 style="color:#FFFFFF !important; font-size:2.6rem; font-weight:800; margin:0 0 0.4rem 0; text-shadow:0 2px 8px rgba(0,0,0,0.4);">🏛️ Welcome to KannadaYatra AI</h1>
-<div class="subtitle" style="color:#FEF3C7 !important; font-size:1.25rem; font-weight:700; margin-bottom:0.8rem;">Your Intelligent, Hyper-Personalized Travel Companion for Karnataka</div>
-<p style="font-size:1.05rem; color:#FFFFFF !important; max-width:880px; margin:0 auto 1.2rem auto; line-height:1.6; text-shadow:0 1px 3px rgba(0,0,0,0.3);">
-Problem Statement 6: AI Travel Planner for Karnataka • Go beyond generic itineraries with living cultural deep-dives,
-phonetically-taught Kannada survival phrases, real-world transit feasibility, and secret culinary trails.
-</p>
-</div>""",
-        unsafe_allow_html=True,
-    )
+    render_hero_banner()
 
     st.markdown(
         f"""<div class="gateway-card" style="display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap;">
@@ -283,23 +266,26 @@ if not st.session_state.get("tutorial_completed", False):
 cur_app_lang = st.session_state.get("app_lang", "English")
 ui_str = UI_LOCALIZATION.get(cur_app_lang, UI_LOCALIZATION["English"])
 
-head_c1, head_c2, head_c3 = st.columns([3.2, 1.2, 1.1])
+head_c1, head_c_sos, head_c2, head_c3 = st.columns([3.0, 0.9, 1.3, 1.1])
 with head_c1:
     st.markdown(
         f"""
-        <div class="top-navbar" style="margin-bottom:0;">
-            <div class="brand">
-                <span style="font-size:2rem;">🏛️</span>
+        <div class="top-navbar" style="margin-bottom:0; padding:0.6rem 1.2rem;">
+            <div class="brand" style="display:flex; align-items:center; gap:12px;">
+                <div style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:10px; padding:3px 8px; box-shadow:0 2px 6px rgba(0,0,0,0.06); display:flex; align-items:center;">
+                    <img src="https://karnatakatourism.org/_next/static/media/logo.2s-4nubynwmtz.svg" onerror="this.onerror=null; this.src='https://web-cms.karnatakatourism.org/wp-content/uploads/2025/11/kannada-Rajyotsava.png';" style="height:32px; width:auto;" alt="Karnataka Tourism" />
+                </div>
                 <div>
-                    <div class="brand-title">KannadaYatra AI</div>
-                    <div class="brand-subtitle">{ui_str['brand_subtitle']}</div>
+                    <div style="font-size:0.68rem; font-weight:800; color:#88131B; text-transform:uppercase; letter-spacing:0.5px;">ಕರ್ನಾಟಕ ಸರ್ಕಾರ • ಪ್ರವಾಸೋದ್ಯಮ ಇಲಾಖೆ</div>
+                    <div class="brand-title" style="font-size:1.35rem; line-height:1.15;">KannadaYatra AI</div>
+                    <div class="brand-subtitle" style="font-size:0.75rem; margin-top:1px;">{ui_str['brand_subtitle']}</div>
                 </div>
             </div>
-            <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
-                <span style="background:#FEF3C7; color:#88131B; font-weight:800; font-size:0.75rem; padding:0.3rem 0.8rem; border-radius:20px; border:1px solid #FDE68A;">
+            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span style="background:#FEF3C7; color:#88131B; font-weight:800; font-size:0.72rem; padding:0.25rem 0.7rem; border-radius:20px; border:1px solid #FDE68A;">
                     {ui_str['badge_hackathon']}
                 </span>
-                <span style="background:#DCFCE7; color:#166534; font-weight:800; font-size:0.75rem; padding:0.3rem 0.8rem; border-radius:20px; border:1px solid #BBF7D0;">
+                <span style="background:#DCFCE7; color:#166534; font-weight:800; font-size:0.72rem; padding:0.25rem 0.7rem; border-radius:20px; border:1px solid #BBF7D0;">
                     {ui_str['badge_ai']}
                 </span>
             </div>
@@ -307,12 +293,28 @@ with head_c1:
         """,
         unsafe_allow_html=True,
     )
+
+with head_c_sos:
+    st.markdown("<div style='height: 2px;'></div>", unsafe_allow_html=True)
+    with st.popover("🚨 SOS", help="Emergency Helplines (24x7)"):
+        st.markdown("#### 🚨 Emergency Tourist Helplines")
+        st.markdown(
+            """
+            - 👮 **Police Emergency:** `112`
+            - 🏛️ **Karnataka Tourist Helpline:** `1363` *(Toll-Free, 24x7)*
+            - 👩 **Women Safety Helpline:** `1091`
+            - 🚑 **Medical / Ambulance:** `108`
+            - 🚌 **KSRTC 24x7 Passenger Care:** `080-49596666`
+            - 🏨 **KSTDC Central Booking:** `080-43344334`
+            """
+        )
+
 with head_c2:
-    st.markdown("<div style='height: 4px;'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='height: 2px;'></div>", unsafe_allow_html=True)
     lang_opts = ["English", "Kannada", "Hindi", "Tamil", "Telugu"]
     lang_curr_idx = lang_opts.index(cur_app_lang) if cur_app_lang in lang_opts else 0
     selected_lang = st.selectbox(
-        "🌐 Language / ಭಾಷೆ / भाषा",
+        "🌐 Language / ಭಾಷೆ",
         options=lang_opts,
         format_func=lambda l: {
             "English": "🇬🇧 English",
@@ -331,7 +333,7 @@ with head_c2:
         st.rerun()
 
 with head_c3:
-    st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='height: 28px;'></div>", unsafe_allow_html=True)
     if st.button(ui_str["view_tutorial"], key="top_view_tutorial_btn", use_container_width=True, help="Revisit the onboarding tutorial and travel guide"):
         st.session_state["tutorial_completed"] = False
         st.rerun()
